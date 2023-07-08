@@ -1,6 +1,6 @@
 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="Trash-can">
-<rect width="16" height="16" fill="white" style="mix-blend-mode:multiply"/>
+<rect width="16" height="16" fill="transparent" style="mix-blend-mode:multiply"/>
 <g id="Vector">
 <path d="M7 6H6V12H7V6Z" fill="#161616"/>
 <path d="M10 6H9V12H10V6Z" fill="#161616"/>
