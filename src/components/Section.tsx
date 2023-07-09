@@ -1,10 +1,4 @@
-import { ReactNode } from 'react';
-
-interface SectionProps {
-	title: string;
-	timeRead: string;
-	children: ReactNode;
-}
+import { SectionProps } from '@/typings/typings';
 
 const Section = ({ title, timeRead, children }: SectionProps) => (
 	<div className='self-stretch min-h-[600px] flex-col justify-start items-start gap-4 flex'>

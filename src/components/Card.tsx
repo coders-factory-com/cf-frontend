@@ -1,8 +1,5 @@
-interface CardProps {
-	borderColor: string;
-	title: string;
-	readTime: string;
-}
+import { CardProps } from "@/typings/typings";
+
 
 function Card({ borderColor, title, readTime }: CardProps) {
 	return (

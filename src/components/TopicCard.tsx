@@ -1,7 +1,5 @@
-interface TopicCardProps {
-	color: string;
-	title: string;
-}
+import { TopicCardProps } from "@/typings/typings";
+
 
 function TopicCard({ color, title }: TopicCardProps) {
 	return (

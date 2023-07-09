@@ -1,13 +1,9 @@
 'use client';
+import { NavbarIconsProps } from '@/typings/typings';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-interface NavbarIconsProps {
-	iconSrc: string;
-	text: string;
-	path: string;
-}
 
 const NavbarIcons = ({ iconSrc, text, path }: NavbarIconsProps) => {
 	const pathname = usePathname();

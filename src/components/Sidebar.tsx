@@ -2,6 +2,7 @@ import React from 'react';
 import NavbarIcons from './NavbarIcons';
 import { navbarIcons } from '@/utils';
 import Image from 'next/image';
+import Link from 'next/link';
 
 function Sidebar() {
 	return (
@@ -9,12 +10,12 @@ function Sidebar() {
 			<div className='self-stretch h-[526px] flex-col justify-center items-center flex'>
 				<div className='self-stretch h-[104px] py-3 bg-neutral-900 flex-col justify-center items-center gap-2.5 flex'>
 					<div className='w-[150px] h-20 pr-[7px] justify-start items-center flex'>
-						<div className='justify-start items-center gap-[11px] flex'>
+						<Link href='/' className='justify-start items-center gap-[11px] flex'>
 							<div className='p-0.5 bg-white rounded justify-center items-center gap-2.5 flex'>
 								<div className='text-black text-[14px] font-semibold leading-none tracking-wide'>&lt;/&gt;</div>
 							</div>
 							<div className='text-white text-[14px] font-bold leading-none whitespace-nowrap tracking-wide'>Coders-Factory</div>
-						</div>
+						</Link>
 					</div>
 				</div>
 				<div className='self-stretch h-auto px-5 py-4 bg-neutral-900 flex-col justify-center items-center gap-2.5 flex'>
@@ -31,10 +32,10 @@ function Sidebar() {
 					))}
 				</nav>
 			</div>
-			<div className='self-stretch h-20 px-4 justify-center items-center gap-3 flex'>
-				<Image height={28} width={28} className=' rounded-full border border-white object-contain' src='/Elipse.png' alt='placeholder' />
+			<Link href='/user/profile' className='self-stretch h-20 px-4 justify-center items-center gap-3 flex'>
+				<Image height={28} width={28} className=' rounded-full border border-white object-contain' src='/Ellipse.png' alt='placeholder' />
 				<div className='text-white text-base font-medium'>Johnny</div>
-			</div>
+			</Link>
 		</div>
 	);
 }
