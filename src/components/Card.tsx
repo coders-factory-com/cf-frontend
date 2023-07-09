@@ -6,27 +6,34 @@ function Card({ title, readTime }: CardProps) {
 	const [isActive, setIsActive] = useState(false);
 
 	useEffect(() => {
-		const handleScroll = () => {
-			const isElementVisible = isElementInViewport(title.replace(/\s+/g, ''));
-			setIsActive(isElementVisible);
+		const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					setIsActive(true);
+				} else {
+					setIsActive(false);
+				}
+			});
 		};
-		window.addEventListener('scroll', handleScroll);
-		handleScroll();
+
+		const observer = new IntersectionObserver(handleIntersection, {
+			root: null,
+			threshold: 0.7,
+		});
+
+		const elementId = title.replace(/\s+/g, '');
+		const element = document.getElementById(elementId);
+
+		if (element) {
+			observer.observe(element);
+		}
 
 		return () => {
-			window.removeEventListener('scroll', handleScroll);
+			if (element) {
+				observer.unobserve(element);
+			}
 		};
-	}, [title]);
-
-	const isElementInViewport = (elementId: string) => {
-		const element = document.getElementById(elementId);
-		console.log(elementId);
-		if (!element) return false;
-		const rect = element.getBoundingClientRect();
-		const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-
-		return rect.top >= 0 && rect.bottom <= windowHeight;
-	};
+	}, []);
 
 	return (
 		<a href={`#${title.replace(/\s+/g, '')}`} className={`self-stretch bg-white transition-colors duration-300 ease-in-out border ${isActive ? 'border-[#0f62fe]' : 'border-[#c6c6c6]'} justify-start items-start flex`}>
