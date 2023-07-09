@@ -1,0 +1,9 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="IBM-cloud--sysdig-secure">
+<rect width="16" height="16" fill="transparent" style="mix-blend-mode:multiply"/>
+<g id="Vector">
+<path d="M12.5 7L11.45 6.5C10.6 6.1 10 5.2 10 4.25V1H15V4.25C15 5.2 14.45 6.1 13.55 6.5L12.5 7ZM11 2V4.25C11 4.85 11.35 5.35 11.85 5.6L12.5 5.9L13.15 5.6C13.65 5.35 14 4.8 14 4.25V2H11Z" fill="white"/>
+<path d="M14 8V11H2V3H8V2H2C1.45 2 1 2.45 1 3V11C1 11.55 1.45 12 2 12H6V14H4V15H12V14H10V12H14C14.55 12 15 11.55 15 11V8H14ZM9 14H7V12H9V14Z" fill="white"/>
+</g>
+</g>
+</svg>
