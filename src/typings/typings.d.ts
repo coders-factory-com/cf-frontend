@@ -4,7 +4,6 @@ export interface BreadcrumbProps {
 }
 
 export interface CardProps {
-	borderColor: string;
 	title: string;
 	readTime: string;
 }

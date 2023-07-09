@@ -1,5 +1,6 @@
 import Breadcrumb from '@/components/Breadcrumb';
 import Card from '@/components/Card';
+import ScrollProgressBar from '@/components/ScrollProgressBar';
 import Section from '@/components/Section';
 import TopicCard from '@/components/TopicCard';
 import { breadcrumbs, cards, topicCards } from '@/utils';
@@ -10,9 +11,12 @@ export default function Home() {
 		<main className=' max-w-[100vw]  h-screen'>
 			<div className='h-auto relative bg-white '>
 				<div className=' right-20 top-[176px]  fixed z-10 flex-col justify-start items-start flex'>
-					{cards.map((card, index) => (
-						<Card key={index} borderColor={card.borderColor} title={card.title} readTime={card.readTime} />
-					))}
+					<div className='w-full h-fit relative'>
+						{cards.map((card, index) => (
+							<Card key={index} title={card.title} readTime={card.readTime} />
+						))}
+						<ScrollProgressBar />
+					</div>
 					<div className='relative my-8 py-8 pl-4 pr-[30px] bg-orange-200 justify-start items-center flex'>
 						<div className='text-black text-[14px] font-normal leading-none tracking-wide'>
 							This is my first and
@@ -64,7 +68,7 @@ export default function Home() {
 											Magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia
 										</div>
 									</Section>
-									<Section title='Good Practice' timeRead='10'>
+									<Section title='Good practice' timeRead='10'>
 										<div className='self-stretch text-neutral-700 text-[14px] font-normal leading-normal'>
 											Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia
 											<br />

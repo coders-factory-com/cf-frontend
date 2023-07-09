@@ -1,8 +1,8 @@
 export const cards = [
-	{ borderColor: 'blue-600', title: 'Theory', readTime: '5' },
-	{ borderColor: 'stone-300', title: 'Code', readTime: '10' },
-	{ borderColor: 'stone-300', title: 'Good practice', readTime: '5' },
-	{ borderColor: 'stone-300', title: 'Summary', readTime: '1' },
+	{ title: 'Introduction', readTime: '5' },
+	{ title: 'Code', readTime: '10' },
+	{ title: 'Good practice', readTime: '5' },
+	{ title: 'Summary', readTime: '1' },
 ];
 
 export const navbarIcons = [
