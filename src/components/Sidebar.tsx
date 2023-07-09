@@ -27,13 +27,13 @@ function Sidebar() {
 				</div>
 				<nav className='self-stretch h-[350px] flex-col justify-center items-start flex'>
 					{navbarIcons.map((icon, index) => (
-						<NavbarIcons key={index} iconSrc={icon.iconSrc} text={icon.text} />
+						<NavbarIcons key={index} iconSrc={icon.iconSrc} text={icon.text} path={icon.path} />
 					))}
 				</nav>
 			</div>
-			<div className='self-stretch h-20 px-4 justify-start items-center gap-3 flex'>
-				<Image height={8} width={8} className=' rounded-full border border-white' src='https://via.placeholder.com/32x32' alt='placeholder' />
-				<div className='text-white text-[10px] font-medium'>Johnny</div>
+			<div className='self-stretch h-20 px-4 justify-center items-center gap-3 flex'>
+				<Image height={28} width={28} className=' rounded-full border border-white object-contain' src='/Elipse.png' alt='placeholder' />
+				<div className='text-white text-base font-medium'>Johnny</div>
 			</div>
 		</div>
 	);

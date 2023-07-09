@@ -6,11 +6,11 @@ export const cards = [
 ];
 
 export const navbarIcons = [
-	{ iconSrc: '/Home.svg', text: 'Home' },
-	{ iconSrc: '/IBM-cloud.svg', text: 'Study plan' },
-	{ iconSrc: '/Virtual-private.svg', text: 'Quizes' },
-	{ iconSrc: '/IBM-z-cloud.svg', text: 'Other' },
-	{ iconSrc: '/IBM--power-vs.svg', text: 'Lorem ipsium' },
+	{ iconSrc: '/Home.svg', text: 'Home', path: '/' },
+	{ iconSrc: '/IBM-cloud.svg', text: 'Study plan', path: '/study-plan' },
+	{ iconSrc: '/Virtual-private.svg', text: 'Quizes', path: '/quizes' },
+	{ iconSrc: '/IBM-z-cloud.svg', text: 'Other', path: '/other' },
+	{ iconSrc: '/IBM--power-vs.svg', text: 'Lorem ipsium', path: '/lorem' },
 ];
 
 export const breadcrumbs = [
