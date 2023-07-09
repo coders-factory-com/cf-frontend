@@ -21,6 +21,7 @@ interface SectionProps {
 }
 
 interface TopicCardProps {
-	color: string;
 	title: string;
+	onClick: () => void;
+	isActive: boolean;
 }
