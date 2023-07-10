@@ -5,3 +5,30 @@
 html {
 	scroll-behavior: smooth;
 }
+html::-webkit-scrollbar {
+	width: 12px;
+}
+
+html::-webkit-scrollbar-thumb {
+	background-color: #0f62fe;
+	border-radius: 10px;
+	border: 3px solid white;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+	background: #3878f0;
+}
+
+.scrollable::-webkit-scrollbar {
+	width: 12px;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+	background-color: #0f62fe;
+	border-radius: 10px;
+	border: 3px solid white;
+}
+
+.scrollable::-webkit-scrollbar-thumb:hover {
+	background: #3878f0;
+}
