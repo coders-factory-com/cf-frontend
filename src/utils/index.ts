@@ -20,9 +20,4 @@ export const breadcrumbs = [
 	{ textColor: 'stone-600', text: 'Breadcrumb' },
 ];
 
-export const topicCards = [
-	{ color: 'blue-600', title: 'Theory' },
-	{ color: 'neutral-200', title: 'Tasks' },
-	{ color: 'neutral-200', title: 'Quizes' },
-	{ color: 'neutral-200', title: 'Other' },
-];
+export const topicCards = [{ title: 'Theory' }, { title: 'Tasks' }, { title: 'Quizes' }, { title: 'Other' }];
