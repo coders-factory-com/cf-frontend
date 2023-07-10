@@ -21,3 +21,14 @@ export const breadcrumbs = [
 ];
 
 export const topicCards = [{ title: 'Theory' }, { title: 'Tasks' }, { title: 'Quizes' }, { title: 'Other' }];
+
+export const notes = [
+	{
+		id: 1,
+		content: 'This is my first note on this page',
+	},
+	{
+		id: 2,
+		content: 'This is my second note on this page',
+	},
+];
