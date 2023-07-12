@@ -71,7 +71,7 @@ export const quizAnswers = [
 
 export const quizData = [
 	{
-		quizId: '1',
+		quizId: 1,
 		quizTitle: 'JavaScript Basics Quiz',
 		tasks: [
 			{
@@ -137,7 +137,7 @@ export const quizData = [
 		],
 	},
 	{
-		quizId: '2',
+		quizId: 2,
 		quizTitle: 'HTML Basics Quiz',
 		tasks: [
 			{
@@ -203,7 +203,7 @@ export const quizData = [
 		],
 	},
 	{
-		quizId: '3',
+		quizId: 3,
 		quizTitle: 'CSS Basics Quiz',
 		tasks: [
 			{
