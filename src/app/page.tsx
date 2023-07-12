@@ -1,7 +1,7 @@
 'use client';
 import Breadcrumb from '@/components/Breadcrumb';
 import OtherContent from '@/components/HomeContent/OtherContent';
-import QuizesContent from '@/components/HomeContent/QuizesContent';
+import QuizesContent from '@/components/HomeContent/QuizContent/QuizesContent';
 import TasksContent from '@/components/HomeContent/TasksContent';
 import TheoryContent from '@/components/HomeContent/TheoryContent';
 import TopicCard from '@/components/TopicCard';

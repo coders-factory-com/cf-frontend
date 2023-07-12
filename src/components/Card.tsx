@@ -1,5 +1,5 @@
 'use client';
-import { CardProps } from '@/typings/typings';
+
 import { useEffect, useState } from 'react';
 
 function Card({ title, readTime }: CardProps) {
@@ -33,6 +33,7 @@ function Card({ title, readTime }: CardProps) {
 				observer.unobserve(element);
 			}
 		};
+	// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	return (
