@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { cards, sections } from '@/utils';
 import Card from '../Card';
 import ScrollProgressBar from '../ScrollProgressBar';
+import Notes from '../Notes';
 
 function TheoryContent() {
 	return (
@@ -14,21 +15,7 @@ function TheoryContent() {
 						<Card key={index} title={card.title} readTime={card.readTime} />
 					))}
 					<ScrollProgressBar />
-				</div>
-				<div className='relative my-8 py-8 pl-4 pr-[30px] bg-orange-200 justify-start items-center flex'>
-					<div className='text-black text-[14px] font-normal leading-none tracking-wide'>
-						This is my first and
-						<br />
-						only note on this
-						<br />
-						page
-					</div>
-					<Image src='./Trash-can.svg' width={20} height={20} alt='' className='absolute bottom-2 right-2' />
-				</div>
-				<div className=' bg-white border w-full border-blue-600 flex-col justify-center items-center flex'>
-					<div className=' py-4 justify-start items-center flex'>
-						<div className='text-blue-600 text-[14px] font-normal leading-none tracking-wide'>Add Note +</div>
-					</div>
+					<Notes />
 				</div>
 			</div>
 			<div className='theoryContent left-[81px] ml-[10%] top-[30px]  flex-col justify-start items-start flex'>
