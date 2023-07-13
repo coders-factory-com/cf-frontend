@@ -1,5 +1,4 @@
 'use client';
-import { CardProps } from '@/typings/typings';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 

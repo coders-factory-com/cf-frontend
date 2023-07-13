@@ -1,5 +1,3 @@
-import { BreadcrumbProps } from "@/typings/typings";
-
 function Breadcrumb({ textColor, text }: BreadcrumbProps) {
 	return (
 		<div className='bg-white justify-start items-start inline-flex'>

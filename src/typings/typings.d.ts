@@ -1,14 +1,14 @@
-export interface BreadcrumbProps {
+interface BreadcrumbProps {
 	textColor: string;
 	text: string;
 }
 
-export interface CardProps {
+interface CardProps {
 	title: string;
 	readTime: string;
 }
 
-export interface NavbarIconsProps {
+interface NavbarIconsProps {
 	iconSrc: string;
 	text: string;
 	path: string;
@@ -17,11 +17,44 @@ export interface NavbarIconsProps {
 interface SectionProps {
 	title: string;
 	timeRead: string;
-	children: ReactNode;
+	content: string;
+	image?: string | null;
 }
 
 interface TopicCardProps {
 	title: string;
 	onClick: () => void;
 	isActive: boolean;
+}
+
+interface ReadOnlyCheckboxProps {
+	text: string;
+	isChecked: boolean;
+}
+
+interface AnswerCheckboxProps {
+	taskId: number;
+	id: number;
+	text: string;
+	isChecked: boolean;
+	onAnswerSelected: (id: number) => void;
+	submitted: boolean;
+	quizId: number;
+}
+
+interface QuizTaskProps {
+	task: {
+		id: number;
+		question: string;
+		description: string;
+		options: [{ id: number; text: string }, { id: number; text: string }, { id: number; text: string }, { id: number; text: string }];
+		correctAnswerId: number;
+	};
+	selectedAnswer: number;
+	onAnswerSelected: (id: number) => void;
+	submitted: boolean;
+	errors: {
+		[quizId: number]: { [taskId: number]: number };
+	};
+	quizId: number;
 }
