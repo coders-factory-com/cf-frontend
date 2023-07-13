@@ -1,5 +1,5 @@
 'use client';
-
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 function Card({ title, readTime }: CardProps) {
@@ -41,14 +41,12 @@ function Card({ title, readTime }: CardProps) {
 			<div className='grow shrink basis-0 flex-col justify-start items-start flex'>
 				<div className='self-stretch h-[34px] pr-4 py-6 flex-col justify-center items-start flex'>
 					<div className='self-stretch pl-2.5 justify-start items-start gap-2 flex'>
-						<div className='py-[1px] justify-start items-start flex'>
-							<div className='w-4 h-4 relative bg-white' />
-						</div>
-						<div className='h-[18px] bg-white flex-col justify-start items-start flex'>
+						<div className='h-[18px] bg-white justify-start items-center flex w-full'>
+							{isActive ? <Image width={14} height={14} alt='' className='mx-2' src='/Incomplete.svg' /> : <Image width={14} height={14} alt='' className='mx-2' src='/Circle-dash.svg' />}
 							<div className='text-neutral-900 text-[14px] font-normal leading-none tracking-wide'>{title}</div>
 						</div>
 					</div>
-					<div className='self-stretch pl-[34px] justify-start items-start flex'>
+					<div className='self-stretch pl-[34px] justify-center items-center flex'>
 						<div className='grow shrink basis-0 text-neutral-600 text-[12px] font-normal leading-none tracking-wide'>{readTime} min read</div>
 					</div>
 				</div>

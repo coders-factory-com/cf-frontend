@@ -31,8 +31,8 @@ function TheoryContent() {
 					</div>
 				</div>
 			</div>
-			<div className=' ml-[10%] flex-col justify-start items-start flex'>
-				<div className='self-stretch  py-[42px] bg-white border   border-neutral-200 flex-col justify-start items-start gap-6 flex'>
+			<div className='theoryContent left-[81px] ml-[10%] top-[30px]  flex-col justify-start items-start flex'>
+				<div className='self-stretch  py-[42px] bg-white border mb-48  border-neutral-200 flex-col justify-start items-start gap-6 flex'>
 					<div className='self-stretch px-6 flex-col justify-start items-start gap-10 flex'>
 						{sections.map((section, index) => (
 							<Section key={index} title={section.title} timeRead={section.timeRead} content={section.content} image={section.image} />
