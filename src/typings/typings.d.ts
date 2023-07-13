@@ -63,3 +63,13 @@ interface ButtonProps {
 	onClick?: () => void;
 	className?: string;
 }
+
+interface FileProps {
+	name: string;
+	language: string;
+	task: string;
+}
+
+interface MarkerProps {
+	message: string;
+}

@@ -9,7 +9,7 @@ import Notes from '../Notes';
 function TheoryContent() {
 	return (
 		<>
-			<div className=' right-20 top-[176px]  fixed z-10 flex-col justify-start items-start flex'>
+			<div className='right-20 top-[176px]  fixed z-10 flex-col justify-start items-start flex'>
 				<div className='w-full h-fit relative'>
 					{cards.map((card, index) => (
 						<Card key={index} title={card.title} readTime={card.readTime} />

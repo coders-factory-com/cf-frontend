@@ -12,8 +12,8 @@ import { useState } from 'react';
 
 export default function Home() {
 	const [selectedCard, setSelectedCard] = useState('Theory');
-//later will be added probably redux for global managment state
-    const [isLoggedIn, setLoggedIn] = useState(false);
+	//later will be added probably redux for global managment state
+	const [isLoggedIn, setLoggedIn] = useState(false);
 
 	return (
 		<main className=' max-w-[100vw]  h-screen'>
@@ -38,24 +38,24 @@ export default function Home() {
 						<div className='w-[calc(100%-191px)] left-[191px] top-[176px] absolute bg-neutral-50'>
 							<div className='max-w-[1280px] '>
 								{selectedCard === 'Theory' && <TheoryContent />}
-								{selectedCard === 'Tasks' && <TasksContent />}
 								{selectedCard === 'Quizes' && <QuizesContent />}
 								{selectedCard === 'Other' && <OtherContent />}
 							</div>
+							{selectedCard === 'Tasks' && <TasksContent />}
 						</div>
 					</section>
 				</>
 			) : (
 				<div className='w-[calc(100%-191px)] left-[191px] h-full absolute p-8 bg-neutral-50'>
 					<h1 className='text-7xl font-bold text-center'>Coders-Factory - Enhance Your Mastery</h1>
-					<div className=' items-center justify-center w-full flex my-12'>
+					<div className=' items-center justify-center w-full space-x-12 flex my-12'>
 						<Button
 							onClick={() => {
 								setLoggedIn(!isLoggedIn);
 							}}
 							text='Login'
 						/>
-						<Button text='Singup' />
+						<Button text='Sing Up' />
 					</div>
 					<h2 className='text-5xl font-bold '>Explore</h2>
 					<div className='w-full justify-evenly flex'>
