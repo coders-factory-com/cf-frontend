@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import QuizTask from './QuizTask';
 import { quizData } from '@/utils';
 import { AiFillCheckCircle } from 'react-icons/ai';
+import Button from '@/common/Button';
 
 const QuizComponent = () => {
 	const [answers, setAnswers] = useState<{ [quizId: number]: { [taskId: number]: number } }>({});
 	const [submitted, setSubmitted] = useState<{ [quizId: number]: boolean }>({});
-	const [errors, setErrors] = useState<{ [quizId: number]: { [taskId: number]: number } }>({});
+	const [errors, setErrors] = useState<{ [quizId: number]: { [taskId: number]: string } }>({});
+
 	const [score, setScore] = useState<{ [quizId: number]: number }>({});
 	const [currentQuizIndex, setCurrentQuizIndex] = useState<number>(0);
 	const quiz = quizData[currentQuizIndex];
@@ -25,7 +27,7 @@ const QuizComponent = () => {
 	};
 
 	const validateAnswers = (quizId: number) => {
-		let validationErrors: { [quizId: number]: { [taskId: number]: number } } = {};
+		let validationErrors: { [quizId: number]: { [taskId: number]: string } } = {};
 
 		quizData.forEach(quiz => {
 			if (quiz.quizId === quizId) {
@@ -97,9 +99,7 @@ const QuizComponent = () => {
 						</div>
 					)}
 					<div className='flex self-end'>
-						<button className='font-bold my-4 mr-12 hover:bg-white border w-24 bg-blue-600 py-4 text-center cursor-pointer hover:text-blue-600 text-[14px] font-normalbg-blue-600 text-white transition-colors duration-300 ease-in-out leading-none tracking-wide' onClick={() => handleSubmit(quiz.quizId)}>
-							Submit
-						</button>
+						<Button type='button' text='Submit' onClick={() => handleSubmit(quiz.quizId)} />
 						{currentQuizIndex < quizData.length - 1 && (
 							<button disabled={!submitted[quiz.quizId]} className=' disabled:opacity-60 font-bold my-4 hover:bg-white border w-24 bg-blue-600 py-4 text-center cursor-pointer hover:text-blue-600 text-[14px] font-normalbg-blue-600 text-white transition-colors duration-300 ease-in-out leading-none tracking-wide' onClick={handleNextQuiz}>
 								Next Quiz

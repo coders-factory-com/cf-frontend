@@ -269,3 +269,5 @@ export const quizData = [
 		],
 	},
 ];
+
+export const mainPagePhotoData = [{ image: 'https://via.placeholder.com/400x400' }, { image: 'https://via.placeholder.com/400x400' }, { image: 'https://via.placeholder.com/400x400' }, { image: 'https://via.placeholder.com/400x400' }];

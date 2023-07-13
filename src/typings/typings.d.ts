@@ -53,8 +53,13 @@ interface QuizTaskProps {
 	selectedAnswer: number;
 	onAnswerSelected: (id: number) => void;
 	submitted: boolean;
-	errors: {
-		[quizId: number]: { [taskId: number]: number };
-	};
+	errors: { [quizId: number]: { [taskId: number]: string } };
 	quizId: number;
+}
+
+interface ButtonProps {
+	text: string;
+	type?: 'submit' | 'button';
+	onClick?: () => void;
+	className?: string;
 }
