@@ -62,6 +62,7 @@ interface ButtonProps {
 	type?: 'submit' | 'button';
 	onClick?: () => void;
 	className?: string;
+    disabled?: boolean
 }
 
 interface FileProps {

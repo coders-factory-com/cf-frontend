@@ -1,4 +1,4 @@
-import React, { useRef, ChangeEvent, useState } from 'react';
+import React, { useState } from 'react';
 import Editor, { OnValidate } from '@monaco-editor/react';
 import { files } from '@/utils';
 import Button from '@/common/Button';
@@ -26,7 +26,7 @@ const TaskContainer: React.FC = () => {
 	};
 
 	return (
-		<div className='bg-neutral-50 pb-6'>
+		<div className='h-[calc(100vh-176px)]'>
 			<div className='py-2 ml-6'>{task}</div>
 			<Editor theme='vc-dark' height='600px' className='bg-neutral-50' path={name} onChange={handleEditorChange} defaultLanguage={language} defaultValue={task} onValidate={handleEditorValidation} />
 			<Button
@@ -40,4 +40,4 @@ const TaskContainer: React.FC = () => {
 	);
 };
 
-export default TaskContainer
+export default TaskContainer;
