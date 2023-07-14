@@ -10,7 +10,7 @@ export const navbarIcons = [
 	{ iconSrc: '/IBM-cloud.svg', text: 'Study plan', path: '/study-plan' },
 	{ iconSrc: '/Virtual-private.svg', text: 'Quizes', path: '/quizes' },
 	{ iconSrc: '/IBM-z-cloud.svg', text: 'Other', path: '/other' },
-	{ iconSrc: '/IBM--power-vs.svg', text: 'Lorem ipsium', path: '/lorem' },
+	{ iconSrc: '/IBM--power-vs.svg', text: 'Flashcards', path: '/flashcards' },
 ];
 
 export const breadcrumbs = [

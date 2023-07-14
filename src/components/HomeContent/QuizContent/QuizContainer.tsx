@@ -4,7 +4,7 @@ import { quizData } from '@/utils';
 import { AiFillCheckCircle } from 'react-icons/ai';
 import Button from '@/common/Button';
 
-const QuizComponent = () => {
+const QuizContainer = () => {
 	const [answers, setAnswers] = useState<{ [quizId: number]: { [taskId: number]: number } }>({});
 	const [submitted, setSubmitted] = useState<{ [quizId: number]: boolean }>({});
 	const [errors, setErrors] = useState<{ [quizId: number]: { [taskId: number]: string } }>({});
@@ -112,4 +112,4 @@ const QuizComponent = () => {
 	);
 };
 
-export default QuizComponent;
+export default QuizContainer;

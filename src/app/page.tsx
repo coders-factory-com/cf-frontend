@@ -1,10 +1,13 @@
 'use client';
 import Button from '@/common/Button';
 import Breadcrumb from '@/components/Breadcrumb';
-import OtherContent from '@/components/HomeContent/OtherContent';
-import QuizesContent from '@/components/HomeContent/QuizContent/QuizesContent';
-import TasksContent from '@/components/HomeContent/TasksContent';
-import TheoryContent from '@/components/HomeContent/TheoryContent';
+import FlashcardsContainer from '@/components/HomeContent/FlashcardsContainer';
+import OtherContainer from '@/components/HomeContent/OtherContainer';
+import OtherContent from '@/components/HomeContent/OtherContainer';
+import QuizesContainer from '@/components/HomeContent/QuizContent/QuizesContainer';
+import QuizesContent from '@/components/HomeContent/QuizContent/QuizesContainer';
+import TasksContent from '@/components/HomeContent/TasksContainer';
+import TheoryContent from '@/components/HomeContent/TheoryContainer';
 import TopicCard from '@/components/TopicCard';
 import { breadcrumbs, mainPagePhotoData, topicCards } from '@/utils';
 import Image from 'next/image';
@@ -38,8 +41,10 @@ export default function Home() {
 						<div className='w-[calc(100%-191px)] left-[191px] top-[176px] absolute bg-neutral-50'>
 							<div className='max-w-[1280px] '>
 								{selectedCard === 'Theory' && <TheoryContent />}
-								{selectedCard === 'Quizes' && <QuizesContent />}
-								{selectedCard === 'Other' && <OtherContent />}
+								{selectedCard === 'Quizes' && <QuizesContainer />}
+								{selectedCard === 'Other' && <OtherContainer/>}
+								{selectedCard === 'Flashcards' && <FlashcardsContainer/>}
+                                
 							</div>
 							{selectedCard === 'Tasks' && <TasksContent />}
 						</div>

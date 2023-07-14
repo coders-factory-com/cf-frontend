@@ -6,7 +6,7 @@ import Card from '../Card';
 import ScrollProgressBar from '../ScrollProgressBar';
 import Notes from '../Notes';
 
-function TheoryContent() {
+function TheoryContainer() {
 	return (
 		<>
 			<div className='right-20 top-[176px]  fixed z-10 flex-col justify-start items-start flex'>
@@ -31,4 +31,4 @@ function TheoryContent() {
 	);
 }
 
-export default TheoryContent;
+export default TheoryContainer

@@ -47,7 +47,7 @@ interface QuizTaskProps {
 		id: number;
 		question: string;
 		description: string;
-		options: [{ id: number; text: string }, { id: number; text: string }, { id: number; text: string }, { id: number; text: string }];
+		options: [{ id: number; text: string }];
 		correctAnswerId: number;
 	};
 	selectedAnswer: number;
