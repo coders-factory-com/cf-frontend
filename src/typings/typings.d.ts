@@ -47,7 +47,7 @@ interface QuizTaskProps {
 		id: number;
 		question: string;
 		description: string;
-		options: [{ id: number; text: string }, { id: number; text: string }, { id: number; text: string }, { id: number; text: string }];
+		options: [{ id: number; text: string }];
 		correctAnswerId: number;
 	};
 	selectedAnswer: number;
@@ -62,4 +62,15 @@ interface ButtonProps {
 	type?: 'submit' | 'button';
 	onClick?: () => void;
 	className?: string;
+    disabled?: boolean
+}
+
+interface FileProps {
+	name: string;
+	language: string;
+	task: string;
+}
+
+interface MarkerProps {
+	message: string;
 }

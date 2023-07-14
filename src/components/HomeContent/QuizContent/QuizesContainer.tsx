@@ -5,7 +5,7 @@ import ReadOnlyCheckbox from './ReadOnlyCheckbox';
 import QuizTask from './QuizTask';
 import QuizComponent from './QuizContainer';
 
-function QuizesContent() {
+function QuizesContainer() {
 	return (
 		<div className='ml-[10%] flex-col justify-start items-start flex w-full h-full '>
 			<div className=' bg-white border w-full max-w-[1000px] h-full min-h-[1200px] px-6 border-neutral-200 flex-col justify-start items-start gap-6 flex'>
@@ -32,4 +32,4 @@ function QuizesContent() {
 	);
 }
 
-export default QuizesContent;
+export default QuizesContainer;

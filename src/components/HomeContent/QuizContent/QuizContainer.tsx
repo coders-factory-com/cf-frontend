@@ -4,7 +4,7 @@ import { quizData } from '@/utils';
 import { AiFillCheckCircle } from 'react-icons/ai';
 import Button from '@/common/Button';
 
-const QuizComponent = () => {
+const QuizContainer = () => {
 	const [answers, setAnswers] = useState<{ [quizId: number]: { [taskId: number]: number } }>({});
 	const [submitted, setSubmitted] = useState<{ [quizId: number]: boolean }>({});
 	const [errors, setErrors] = useState<{ [quizId: number]: { [taskId: number]: string } }>({});
@@ -99,12 +99,8 @@ const QuizComponent = () => {
 						</div>
 					)}
 					<div className='flex self-end'>
-						<Button type='button' text='Submit' onClick={() => handleSubmit(quiz.quizId)} />
-						{currentQuizIndex < quizData.length - 1 && (
-							<button disabled={!submitted[quiz.quizId]} className=' disabled:opacity-60 font-bold my-4 hover:bg-white border w-24 bg-blue-600 py-4 text-center cursor-pointer hover:text-blue-600 text-[14px] font-normalbg-blue-600 text-white transition-colors duration-300 ease-in-out leading-none tracking-wide' onClick={handleNextQuiz}>
-								Next Quiz
-							</button>
-						)}
+						<Button type='button' text='Submit' className='mr-6' onClick={() => handleSubmit(quiz.quizId)} />
+						{currentQuizIndex < quizData.length - 1 && <Button type='submit' disabled={!submitted[quiz.quizId]} text='Next Quiz' onClick={handleNextQuiz} />}
 					</div>
 				</>
 			)}
@@ -112,4 +108,4 @@ const QuizComponent = () => {
 	);
 };
 
-export default QuizComponent;
+export default QuizContainer;

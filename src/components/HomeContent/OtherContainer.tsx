@@ -1,9 +1,9 @@
 import React from 'react'
 
-function OtherContent() {
+function OtherContainer() {
   return (
     <div>OtherContent</div>
   )
 }
 
-export default OtherContent
+export default OtherContainer
