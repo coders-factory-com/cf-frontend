@@ -11,7 +11,7 @@ import { breadcrumbs, mainPagePhotoData, topicCards } from '@/utils';
 import Image from 'next/image';
 import { useState } from 'react';
 
-export default function Home() {
+export default function HomePage() {
 	const [selectedCard, setSelectedCard] = useState('Theory');
 	//later will be added probably redux for global managment state
 	const [isLoggedIn, setLoggedIn] = useState(false);
@@ -57,6 +57,7 @@ export default function Home() {
 						/>
 						<Button text='Sing Up' />
 					</div>
+
 					<h2 className='text-5xl font-bold '>Explore</h2>
 					<div className='w-full justify-evenly flex'>
 						<div className='flex justify-evenly my-8 flex-wrap  w-[800px]'>
