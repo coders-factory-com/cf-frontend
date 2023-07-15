@@ -1,8 +1,9 @@
 interface BreadcrumbProps {
-	textColor: string;
-	text: string;
-}
-
+    text: string;
+    index: number;
+    handleClick: (index: number) => void;
+  }
+  
 interface CardProps {
 	title: string;
 	readTime: string;
