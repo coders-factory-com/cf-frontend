@@ -13,12 +13,7 @@ export const navbarIcons = [
 	{ iconSrc: '/IBM--power-vs.svg', text: 'Flashcards', path: '/flashcards' },
 ];
 
-export const breadcrumbs = [
-	{ textColor: 'blue-600', text: 'Breadcrumb' },
-	{ textColor: 'blue-600', text: 'Breadcrumb' },
-	{ textColor: 'blue-600', text: 'Breadcrumb' },
-	{ textColor: 'stone-600', text: 'Breadcrumb' },
-];
+export const breadcrumbsData = [{ text: 'Home' }, { text: 'Technology' }, { text: 'Programming' }, { text: 'Javascript' }, { text: 'Basics' }];
 
 export const topicCards = [{ title: 'Theory' }, { title: 'Tasks' }, { title: 'Quizes' }, { title: 'Other' }];
 
