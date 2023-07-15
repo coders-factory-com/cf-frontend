@@ -30,7 +30,7 @@ const TaskContainer: React.FC = () => {
 			<div className='py-2 ml-6'>{task}</div>
 			<Editor theme='vc-dark' height='600px' className='bg-neutral-50' path={name} onChange={handleEditorChange} defaultLanguage={language} defaultValue={task} onValidate={handleEditorValidation} />
 			<Button
-				className='ml-12 my-8'
+				addedClassName='ml-12 my-8'
 				text='Submit'
 				onClick={() => {
 					handleSaveClick();

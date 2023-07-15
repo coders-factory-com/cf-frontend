@@ -99,7 +99,7 @@ const QuizContainer = () => {
 						</div>
 					)}
 					<div className='flex self-end'>
-						<Button type='button' text='Submit' className='mr-6' onClick={() => handleSubmit(quiz.quizId)} />
+						<Button type='button' text='Submit' addedClassName='mr-6' onClick={() => handleSubmit(quiz.quizId)} />
 						{currentQuizIndex < quizData.length - 1 && <Button type='submit' disabled={!submitted[quiz.quizId]} text='Next Quiz' onClick={handleNextQuiz} />}
 					</div>
 				</>

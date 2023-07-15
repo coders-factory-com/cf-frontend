@@ -61,7 +61,7 @@ interface ButtonProps {
 	text: string;
 	type?: 'submit' | 'button';
 	onClick?: () => void;
-	className?: string;
+	addedClassName?: string;
     disabled?: boolean
 }
 
