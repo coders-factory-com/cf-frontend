@@ -73,7 +73,12 @@ export default function HomePage() {
 							}}
 							text='Login'
 						/>
-						<Button text='Sing Up' />
+						<Button
+							text='Sing Up'
+							onClick={() => {
+								router.push(`/auth/singup`);
+							}}
+						/>
 					</div>
 
 					<h2 className='text-5xl font-bold '>Explore</h2>
