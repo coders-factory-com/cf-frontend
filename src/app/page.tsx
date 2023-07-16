@@ -7,29 +7,18 @@ import QuizesContainer from '@/components/HomeContent/QuizContent/QuizesContaine
 import TaskContainer from '@/components/HomeContent/TasksContainer';
 import TheoryContainer from '@/components/HomeContent/TheoryContainer';
 import TopicCard from '@/components/TopicCard';
+import { login, selectIsLoggedIn } from '@/redux/authSlice';
 import { breadcrumbsData, mainPagePhotoData, topicCards } from '@/utils';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function HomePage() {
 	const [selectedCard, setSelectedCard] = useState('Theory');
-	const router = useRouter();
-	//later will be added probably redux for global managment state
-	const [isLoggedIn, setLoggedIn] = useState(false);
-	const [breadcrumbs, setBreadcrumbs] = useState(breadcrumbsData);
-	const handleClick = (index: number) => {
-		setBreadcrumbs(prevBreadcrumbs => {
-			const updatedBreadcrumbs = prevBreadcrumbs.slice(0, index + 1);
-			const path = updatedBreadcrumbs
-				.map(breadcrumb => breadcrumb.text)
-				.join('/')
-				.toLocaleLowerCase()
-				.trim();
-			router.push(`/${path}`);
-			return updatedBreadcrumbs;
-		});
-	};
+//later will be added probably redux for global managment state
+    const [isLoggedIn, setLoggedIn] = useState(false);
+
 	return (
 		<main className=' max-w-[100vw]  min-h-screen h-full'>
 			{isLoggedIn ? (
@@ -65,7 +54,7 @@ export default function HomePage() {
 					<div className=' items-center justify-center w-full space-x-12 flex my-12'>
 						<Button
 							onClick={() => {
-								setLoggedIn(!isLoggedIn);
+								dispatch(login());
 							}}
 							text='Login'
 						/>
