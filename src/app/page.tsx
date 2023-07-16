@@ -16,8 +16,23 @@ import { useDispatch, useSelector } from 'react-redux';
 
 export default function HomePage() {
 	const [selectedCard, setSelectedCard] = useState('Theory');
-//later will be added probably redux for global managment state
-    const [isLoggedIn, setLoggedIn] = useState(false);
+	const isLoggedIn = useSelector(selectIsLoggedIn);
+	const [breadcrumbs, setBreadcrumbs] = useState(breadcrumbsData);
+	const router = useRouter();
+	const dispatch = useDispatch();
+
+	const handleClick = (index: number) => {
+		setBreadcrumbs(prevBreadcrumbs => {
+			const updatedBreadcrumbs = prevBreadcrumbs.slice(0, index + 1);
+			const path = updatedBreadcrumbs
+				.map(breadcrumb => breadcrumb.text)
+				.join('/')
+				.toLocaleLowerCase()
+				.trim();
+			router.push(`/${path}`);
+			return updatedBreadcrumbs;
+		});
+	};
 
 	return (
 		<main className=' max-w-[100vw]  min-h-screen h-full'>

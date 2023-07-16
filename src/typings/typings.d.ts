@@ -1,9 +1,9 @@
 interface BreadcrumbProps {
-    text: string;
-    index: number;
-    handleClick: (index: number) => void;
-  }
-  
+	text: string;
+	index: number;
+	handleClick: (index: number) => void;
+}
+
 interface CardProps {
 	title: string;
 	readTime: string;
@@ -63,7 +63,7 @@ interface ButtonProps {
 	type?: 'submit' | 'button';
 	onClick?: () => void;
 	addedClassName?: string;
-    disabled?: boolean
+	disabled?: boolean;
 }
 
 interface FileProps {
