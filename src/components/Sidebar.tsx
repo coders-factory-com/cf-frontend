@@ -11,7 +11,7 @@ function Sidebar() {
 	const isLoggedIn = useSelector(selectIsLoggedIn);
 
 	return (
-		<div className='w-[190px] h-full left-0 fixed top-0 bg-neutral-800 flex-col items-start justify-between gap-[60px] flex'>
+		<div className='w-[190px] z-10 h-full left-0 fixed top-0 bg-neutral-800 flex-col items-start justify-between gap-[60px] flex'>
 			{isLoggedIn ? (
 				<>
 					<div className='self-stretch h-[526px] '>

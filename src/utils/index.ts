@@ -7,7 +7,7 @@ export const cards = [
 
 export const navbarIcons = [
 	{ iconSrc: '/Home.svg', text: 'Home', path: '/' },
-	{ iconSrc: '/IBM-cloud.svg', text: 'Study plan', path: '/study-plan' },
+	{ iconSrc: '/IBM-cloud.svg', text: 'Study plan', path: '/study_plan' },
 	{ iconSrc: '/Virtual-private.svg', text: 'Quizes', path: '/quizes' },
 	{ iconSrc: '/IBM-z-cloud.svg', text: 'Other', path: '/other' },
 	{ iconSrc: '/IBM--power-vs.svg', text: 'Flashcards', path: '/flashcards' },

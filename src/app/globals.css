@@ -39,3 +39,30 @@ html::-webkit-scrollbar-thumb:hover {
 .scrollable::-webkit-scrollbar-thumb:hover {
 	background: #3878f0;
 }
+
+.right-shadow {
+	box-shadow: 16px 10px 25px -10px rgba(0, 0, 0, 0.75);
+}
+.right-shadow::after {
+	position: absolute;
+	bottom: -20px;
+	z-index: 2;
+	display: block;
+	height: 20px;
+	background: #fff;
+	width: 100%;
+	content: '';
+}
+.left-shadow {
+	box-shadow: -16px 10px 25px -10px rgba(0, 0, 0, 0.75);
+}
+.left-shadow::after {
+	position: absolute;
+	bottom: -20px;
+	z-index: 2;
+	display: block;
+	height: 20px;
+	background: #fff;
+	width: 100%;
+	content: '';
+}
