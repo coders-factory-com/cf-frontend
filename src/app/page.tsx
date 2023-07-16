@@ -6,14 +6,16 @@ import QuizesContent from '@/components/HomeContent/QuizContent/QuizesContent';
 import TasksContent from '@/components/HomeContent/TasksContent';
 import TheoryContent from '@/components/HomeContent/TheoryContent';
 import TopicCard from '@/components/TopicCard';
+import { login, selectIsLoggedIn } from '@/redux/authSlice';
 import { breadcrumbs, mainPagePhotoData, topicCards } from '@/utils';
 import Image from 'next/image';
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function Home() {
 	const [selectedCard, setSelectedCard] = useState('Theory');
-//later will be added probably redux for global managment state
-    const [isLoggedIn, setLoggedIn] = useState(false);
+	const dispatch = useDispatch();
+	const isLoggedIn = useSelector(selectIsLoggedIn);
 
 	return (
 		<main className=' max-w-[100vw]  h-screen'>
@@ -51,7 +53,7 @@ export default function Home() {
 					<div className=' items-center justify-center w-full flex my-12'>
 						<Button
 							onClick={() => {
-								setLoggedIn(!isLoggedIn);
+								dispatch(login());
 							}}
 							text='Login'
 						/>
