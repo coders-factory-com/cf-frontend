@@ -13,6 +13,25 @@ export const navbarIcons = [
 	{ iconSrc: '/IBM--power-vs.svg', text: 'Flashcards', path: '/flashcards' },
 ];
 
+export const socialIcons = [
+    {
+      src: '/facebook-icon.svg',
+      alt: 'facebook icon'
+    },
+    {
+      src: '/google-icon.svg',
+      alt: 'google icon'
+    },
+    {
+      src: '/linkedin-icon.svg',
+      alt: 'linkedin icon'
+    },
+    {
+      src: '/github-icon.svg',
+      alt: 'github icon'
+    }
+  ];
+
 export const breadcrumbsData = [{ text: 'Home' }, { text: 'Technology' }, { text: 'Programming' }, { text: 'Javascript' }, { text: 'Basics' }];
 
 export const topicCards = [{ title: 'Theory' }, { title: 'Tasks' }, { title: 'Quizes' }, { title: 'Other' }];

@@ -4,6 +4,9 @@ import Link from 'next/link';
 import { FiUser } from 'react-icons/fi';
 import { FormEvent, useState } from 'react';
 import { AiOutlineLock } from 'react-icons/ai';
+import { Input } from '@/common/Input';
+import { socialIcons } from '@/utils';
+import FormHeader from './FormHeader';
 
 const LoginForm = () => {
 	const [email, setEmail] = useState('');
@@ -17,15 +20,7 @@ const LoginForm = () => {
 
 	return (
 		<div className='w-[500px]'>
-			<h2 className='flex my-6 justify-center items-center'>
-				<div className='p-0.5 bg-gray-300 rounded justify-center items-center gap-2.5 flex mr-4'>
-					<div className='text-black text-[14px] font-semibold leading-none tracking-wide'>&lt;/&gt;</div>
-				</div>
-				<div className='text-black text-[14px] font-bold leading-none whitespace-nowrap tracking-wide'>Coders-Factory</div>
-			</h2>
-			<h3 className='text-center font-bold text-2xl'>For Developers</h3>
-
-			<p className='!my-4 w-full text-center'>Practice coding, prepare for interviews, and get hired.</p>
+			<FormHeader />
 			<div className='shadow-lg pb-8 bg-white'>
 				<div className='relative overflow-hidden h-14 '>
 					<Link href='/auth/singup' className='relative w-1/2 text-center inline-block py-4 z-0 bg-[#f9fbfb] font-bold'>
@@ -36,14 +31,8 @@ const LoginForm = () => {
 					</Link>
 				</div>
 				<form className='relative z-[3]  px-6 mt-4 py-6 space-y-8' onSubmit={handleSubmit}>
-					<div className='relative'>
-						<FiUser className='absolute text-2xl  top-1/2 left-4 transform -translate-y-1/2' />
-						<input type='email' placeholder='E-mail' value={email} className='appearance-none py-4 w-full border-[1px] border-gray-200 rounded-lg hover:border-black pl-12' onChange={e => setEmail(e.target.value)} />
-					</div>
-					<div className='relative'>
-						<AiOutlineLock className='absolute text-2xl  top-1/2 left-4 transform -translate-y-1/2' />
-						<input type='password' className='appearance-none py-4 w-full border-[1px] border-gray-200 rounded-lg hover:border-black pl-12' placeholder='Password' value={password} onChange={e => setPassword(e.target.value)} />
-					</div>
+					<Input icon={<FiUser />} placeholder='E-mail' value={email} onChange={e => setEmail(e.target.value)} />
+					<Input icon={<AiOutlineLock />} isPassword placeholder='Password' value={password} onChange={e => setPassword(e.target.value)} />
 					<div className='flex justify-between items-center'>
 						<label className='flex justify-between items-center' htmlFor='remember'>
 							<input id='remember' className='mr-4 w-4 h-4 accent-green-700' type='checkbox' />
@@ -63,19 +52,11 @@ const LoginForm = () => {
 					<hr className='w-full' />
 				</div>
 				<ul className='flex w-full justify-between px-4 mt-4'>
-					<li className='px-8 border-r-[1px] border-gray-200'>
-						<Image width={40} height={40} className='cursor-pointer' src='/facebook-icon.svg' alt='facebook icon' />
-					</li>
-
-					<li className='pr-8 border-r-[1px] border-gray-200'>
-						<Image width={40} height={40} className='cursor-pointer' src='/google-icon.svg' alt='google icon' />
-					</li>
-					<li className='pr-8 border-r-[1px] border-gray-200'>
-						<Image width={40} height={40} className='cursor-pointer' src='/linkedin-icon.svg' alt='linkedin icon' />
-					</li>
-					<li className='pr-8'>
-						<Image width={40} height={40} className='cursor-pointer' src='/github-icon.svg' alt='github icon' />
-					</li>
+					{socialIcons.map((icon, index) => (
+						<li key={index} className={`${index !== socialIcons.length - 1 ? 'px-8 border-r-[1px] border-gray-200' : 'pr-8'}`}>
+							<Image width={40} height={40} className='cursor-pointer' src={icon.src} alt={icon.alt} />
+						</li>
+					))}
 				</ul>
 			</div>
 		</div>
