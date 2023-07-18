@@ -62,8 +62,9 @@ interface ButtonProps {
 	text: string;
 	type?: 'submit' | 'button';
 	onClick?: () => void;
-	addedClassName?: string;
 	disabled?: boolean;
+	variant: 'primary' | 'secondary';
+	addedClassName?: string;
 }
 
 interface FileProps {
@@ -83,3 +84,5 @@ interface InputProps {
 	value?: string;
 	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
+
+type ErrorSchema = z.infer<typeof x>;

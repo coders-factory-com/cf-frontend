@@ -7,15 +7,36 @@ import { FormEvent, useState } from 'react';
 import { AiOutlineLock, AiOutlineMail } from 'react-icons/ai';
 import { FiUser } from 'react-icons/fi';
 import FormHeader from './FormHeader';
+import { z } from 'zod';
+import ErrorMessage from '@/common/ErrorMessage';
+import Button from '@/common/Button';
+
+const RegisterFormSchema = z.object({
+	name: z
+		.string()
+		.nonempty('Name is required')
+		.refine(value => {
+			const trimmedName = value.trim();
+			return trimmedName.split(' ').filter(Boolean).length >= 2;
+		}, ' full name must contain at least two words'),
+	email: z.string().email('Invalid email format'),
+	password: z.string().min(8, 'Minimum password length is 8'),
+});
 
 const RegisterForm = () => {
 	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
+	const [errors, setErrors] = useState<ErrorSchema | null>(null);
 
 	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		console.log(name, email, password);
+		const result = RegisterFormSchema.safeParse({ name, email, password });
+		if (result.success) {
+			setErrors(null);
+		} else {
+			setErrors(result.error.formErrors.fieldErrors);
+		}
 	};
 
 	return (
@@ -23,8 +44,8 @@ const RegisterForm = () => {
 			<FormHeader />
 			<div className='shadow-lg pb-8   bg-white'>
 				<div className='relative overflow-hidden h-14 '>
-					<Link href='/auth/singup' className='relative w-1/2 py-4 z-[1] inline-block text-center  bg-white right-shadow font-bold'>
-						Sing Up
+					<Link href='/auth/signup' className='relative w-1/2 py-4 z-[1] inline-block text-center  bg-white right-shadow font-bold'>
+						Sign Up
 					</Link>
 					<Link className='relative w-1/2 text-center inline-block py-4 z-0 bg-[#f9fbfb] font-bold' href='/auth/login'>
 						Login
@@ -34,6 +55,9 @@ const RegisterForm = () => {
 					<Input icon={<FiUser />} placeholder='First and last name' value={name} onChange={e => setName(e.target.value)} />
 					<Input icon={<AiOutlineMail />} placeholder='E-mail' value={email} onChange={e => setEmail(e.target.value)} />
 					<Input icon={<AiOutlineLock />} isPassword placeholder='Password' value={password} onChange={e => setPassword(e.target.value)} />
+					{errors?.name && <ErrorMessage>{errors.name}</ErrorMessage>}
+					{errors?.email && <ErrorMessage>{errors.email}</ErrorMessage>}
+					{errors?.password && <ErrorMessage>{errors.password}</ErrorMessage>}
 					<div className='flex justify-between items-center'>
 						<label className='flex justify-between items-center' htmlFor='remember'>
 							<input id='remember' className='mr-4 w-4 h-4 accent-green-700' type='checkbox' />
@@ -43,9 +67,7 @@ const RegisterForm = () => {
 							Forgot your password?
 						</Link>
 					</div>
-					<button className=' bg-[#00751f]  hover:bg-[#0f6125] transition-colors duration-200 ease-in-out p-4 text-white font-bold rounded-lg' type='submit'>
-						Create an account
-					</button>
+					<Button text='	Create an account' variant='secondary' />
 				</form>
 				<div className='flex w-full  px-6 justify-center items-center'>
 					<hr className='w-full' />
