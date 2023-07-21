@@ -68,15 +68,17 @@ export default function HomePage() {
 					<h1 className='text-7xl font-bold text-center'>Coders-Factory - Enhance Your Mastery</h1>
 					<div className=' items-center justify-center w-full space-x-12 flex my-12'>
 						<Button
+							variant='primary'
 							onClick={() => {
 								dispatch(login());
 							}}
 							text='Login'
 						/>
 						<Button
-							text='Sing Up'
+							variant='primary'
+							text='Sign Up'
 							onClick={() => {
-								router.push(`/auth/singup`);
+								router.push(`/auth/signup`);
 							}}
 						/>
 					</div>

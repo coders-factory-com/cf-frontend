@@ -12,7 +12,7 @@ export const Input = ({ icon, placeholder, isPassword = false, ...props }: Input
 					{showPassword ? <FiEyeOff /> : <FiEye />}
 				</div>
 			)}
-			<input type={isPassword && !showPassword ? 'password' : 'text'} placeholder={placeholder} className={`appearance-none py-4 w-full border-[1px] border-gray-200 rounded-lg hover:border-black ${icon && 'pl-12'}`} {...props} />
+			<input type={isPassword && !showPassword ? 'password' : 'text'} placeholder={placeholder} className={`appearance-none py-4 w-full border-[1px] border-gray-200 rounded-lg hover:border-black ${icon ? 'pl-12' : 'pl-4'}`} {...props} />
 		</div>
 	);
 };

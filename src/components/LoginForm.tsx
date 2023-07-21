@@ -7,24 +7,37 @@ import { AiOutlineLock } from 'react-icons/ai';
 import { Input } from '@/common/Input';
 import { socialIcons } from '@/utils';
 import FormHeader from './FormHeader';
+import { z } from 'zod';
+import ErrorMessage from '@/common/ErrorMessage';
+import Button from '@/common/Button';
+
+const LoginFormSchema = z.object({
+	email: z.string().email('Invalid email format'),
+	password: z.string().min(8, 'Minimum password length is 8'),
+});
 
 const LoginForm = () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
+	const [errors, setErrors] = useState<ErrorSchema | null>(null);
 
 	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-
-		console.log('Dane logowania:', { email, password });
+		const result = LoginFormSchema.safeParse({ email, password });
+		if (result.success) {
+			setErrors(null);
+			console.log('Dane logowania:', result.data);
+		} else {
+			setErrors(result.error.formErrors.fieldErrors);
+		}
 	};
-
 	return (
 		<div className='w-[500px]'>
 			<FormHeader />
 			<div className='shadow-lg pb-8 bg-white'>
 				<div className='relative overflow-hidden h-14 '>
-					<Link href='/auth/singup' className='relative w-1/2 text-center inline-block py-4 z-0 bg-[#f9fbfb] font-bold'>
-						Sing Up
+					<Link href='/auth/signup' className='relative w-1/2 text-center inline-block py-4 z-0 bg-[#f9fbfb] font-bold'>
+						Sign Up
 					</Link>
 					<Link href='/auth/login' className='relative inline-block text-center w-1/2 py-4 z-[1]  bg-white left-shadow font-bold'>
 						Login
@@ -33,6 +46,8 @@ const LoginForm = () => {
 				<form className='relative z-[3]  px-6 mt-4 py-6 space-y-8' onSubmit={handleSubmit}>
 					<Input icon={<FiUser />} placeholder='E-mail' value={email} onChange={e => setEmail(e.target.value)} />
 					<Input icon={<AiOutlineLock />} isPassword placeholder='Password' value={password} onChange={e => setPassword(e.target.value)} />
+					{errors?.email && <ErrorMessage>{errors.email}</ErrorMessage>}
+					{errors?.password && <ErrorMessage>{errors.password}</ErrorMessage>}
 					<div className='flex justify-between items-center'>
 						<label className='flex justify-between items-center' htmlFor='remember'>
 							<input id='remember' className='mr-4 w-4 h-4 accent-green-700' type='checkbox' />
@@ -42,9 +57,7 @@ const LoginForm = () => {
 							Forgot your password?
 						</Link>
 					</div>
-					<button className=' bg-[#00751f]  hover:bg-[#0f6125] transition-colors duration-200 ease-in-out py-3 px-6 text-white font-bold rounded-lg' type='submit'>
-						Log in
-					</button>
+					<Button variant='secondary' type='submit' text='Log in' />
 				</form>
 				<div className='flex w-full  px-6 justify-center items-center'>
 					<hr className='w-full' />

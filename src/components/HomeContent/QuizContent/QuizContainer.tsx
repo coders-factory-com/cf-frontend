@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import QuizTask from './QuizTask';
 import { quizData } from '@/utils';
-import { AiFillCheckCircle } from 'react-icons/ai';
 import Button from '@/common/Button';
+import SuccessMessage from '@/common/SuccessMessage';
+import ErrorMessage from '@/common/ErrorMessage';
 
 const QuizContainer = () => {
 	const [answers, setAnswers] = useState<{ [quizId: number]: { [taskId: number]: number } }>({});
 	const [submitted, setSubmitted] = useState<{ [quizId: number]: boolean }>({});
 	const [errors, setErrors] = useState<{ [quizId: number]: { [taskId: number]: string } }>({});
-
 	const [score, setScore] = useState<{ [quizId: number]: number }>({});
 	const [currentQuizIndex, setCurrentQuizIndex] = useState<number>(0);
 	const quiz = quizData[currentQuizIndex];
@@ -21,8 +21,16 @@ const QuizContainer = () => {
 				[taskId]: answerId,
 			},
 		}));
+		setErrors(prev => {
+			let newErrors = { ...prev };
+			if (newErrors[quizId] && newErrors[quizId][taskId]) {
+				delete newErrors[quizId][taskId];
+			}
+			return newErrors;
+		});
 	};
 	const handleNextQuiz = () => {
+		window.scrollTo(0, 0);
 		setCurrentQuizIndex(prev => prev + 1);
 	};
 
@@ -46,10 +54,9 @@ const QuizContainer = () => {
 		});
 
 		setErrors(prev => ({ ...prev, ...validationErrors }));
-
 		if (Object.keys(validationErrors).length === 0) {
-			setSubmitted(prev => ({ ...prev, [quizId]: true }));
 			calculateScore(quizId);
+			setSubmitted(prev => ({ ...prev, [quizId]: true }));
 		}
 	};
 
@@ -92,15 +99,13 @@ const QuizContainer = () => {
 					{submitted[quiz.quizId] && (
 						<div className='border-b-[1px] w-full pb-12 border-gray-300'>
 							<div className='my-4 w-full text-black text-xl font-medium'>Summary</div>
-							<div className='self-stretch w-full py-4 bg-green-100 border border-green-600 border-l-4 border-opacity-30 justify-start items-start gap-4 inline-flex'>
-								<AiFillCheckCircle className='text-green-600 text-xl ml-4' />
-								<div className='text-neutral-900 text-sm font-bold leading-[18px] tracking-tight'>Success {score[quiz.quizId]}% good questions</div>
-							</div>
+							{score[quiz.quizId] >= 50 ? <SuccessMessage>Success {score[quiz.quizId]}% good questions</SuccessMessage> : <ErrorMessage>Failure {score[quiz.quizId]}% good questions</ErrorMessage>}
 						</div>
 					)}
+
 					<div className='flex self-end'>
-						<Button type='button' text='Submit' addedClassName='mr-6' onClick={() => handleSubmit(quiz.quizId)} />
-						{currentQuizIndex < quizData.length - 1 && <Button type='submit' disabled={!submitted[quiz.quizId]} text='Next Quiz' onClick={handleNextQuiz} />}
+						<Button variant='primary' type='button' text='Submit' addedClassName='mr-6' onClick={() => handleSubmit(quiz.quizId)} />
+						{currentQuizIndex < quizData.length - 1 && <Button variant='primary' type='submit' disabled={!submitted[quiz.quizId]} text='Next Quiz' onClick={handleNextQuiz} />}
 					</div>
 				</>
 			)}
