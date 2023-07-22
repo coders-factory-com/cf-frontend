@@ -10,6 +10,7 @@ import FormHeader from '../FormHeader';
 import { z } from 'zod';
 import ErrorMessage from '@/common/ErrorMessage';
 import Button from '@/common/Button';
+import { signIn } from 'next-auth/react';
 
 const LoginFormSchema = z.object({
 	email: z.string().email('Invalid email format'),
@@ -67,7 +68,18 @@ const LoginForm = () => {
 				<ul className='flex w-full justify-between px-4 mt-4'>
 					{socialIcons.map((icon, index) => (
 						<li key={index} className={`${index !== socialIcons.length - 1 ? 'px-8 border-r-[1px] border-gray-200' : 'pr-8'}`}>
-							<Image width={40} height={40} className='cursor-pointer' src={icon.src} alt={icon.alt} />
+							<Image
+								width={40}
+								height={40}
+								className='cursor-pointer'
+								src={icon.src}
+								alt={icon.alt}
+								onClick={() => {
+									if (icon.alt === 'google icon') {
+										signIn('google', { callbackUrl: `${window.location.origin}/home` });
+									}
+								}}
+							/>
 						</li>
 					))}
 				</ul>
