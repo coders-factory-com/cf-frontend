@@ -1,4 +1,4 @@
-import { AiFillCheckCircle, AiFillCloseCircle } from 'react-icons/ai';
+
 import AnswerCheckbox from './AnswerCheckbox';
 import ErrorMessage from '@/common/ErrorMessage';
 import SuccessMessage from '@/common/SuccessMessage';

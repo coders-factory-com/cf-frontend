@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { FormEvent, useState } from 'react';
 import { AiOutlineLock, AiOutlineMail } from 'react-icons/ai';
 import { FiUser } from 'react-icons/fi';
-import FormHeader from './FormHeader';
+import FormHeader from '../FormHeader';
 import { z } from 'zod';
 import ErrorMessage from '@/common/ErrorMessage';
 import Button from '@/common/Button';

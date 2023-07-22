@@ -3,6 +3,11 @@ interface BreadcrumbProps {
 	index: number;
 	handleClick: (index: number) => void;
 }
+type BreadcrumbType = {
+    text: string;
+    href: string;
+};
+
 
 interface CardProps {
 	title: string;
@@ -86,3 +91,16 @@ interface InputProps {
 }
 
 type ErrorSchema = z.infer<typeof x>;
+
+interface Item {
+	toLowerCase?: any;
+	name: string;
+	href?: string;
+	subcategories?: Array<Item>;
+	levels?: Array<string>;
+}
+
+interface LinkListProps {
+	data: Array<Item>;
+	urlMapper: (item: Item) => string;
+}

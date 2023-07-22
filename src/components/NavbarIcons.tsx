@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 
 const NavbarIcons = ({ iconSrc, text, path }: NavbarIconsProps) => {
 	const pathname = usePathname();
-	const isActive = pathname === path;
+	const isActive = pathname.startsWith(path);
 
 	return (
 		<>

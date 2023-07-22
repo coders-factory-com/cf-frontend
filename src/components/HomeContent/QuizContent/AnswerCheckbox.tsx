@@ -1,4 +1,3 @@
-import React from 'react';
 
 const AnswerCheckbox = ({ quizId, taskId, id, text, isChecked, onAnswerSelected, submitted }: AnswerCheckboxProps) => {
 	const uniqueId = `${quizId}-${taskId}-${id}`;

@@ -1,6 +1,6 @@
 import { notes as initialNotes } from '@/utils/index';
 import Image from 'next/image';
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import '@/app/globals.css';
 
 function Notes() {

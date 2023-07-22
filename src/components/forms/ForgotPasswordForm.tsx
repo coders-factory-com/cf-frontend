@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { FiUser } from 'react-icons/fi';
 import { FormEvent, useState } from 'react';
 import { Input } from '@/common/Input';
-import FormHeader from './FormHeader';
+import FormHeader from '../FormHeader';
 import { z } from 'zod';
 import ErrorMessage from '@/common/ErrorMessage';
 import Button from '@/common/Button';

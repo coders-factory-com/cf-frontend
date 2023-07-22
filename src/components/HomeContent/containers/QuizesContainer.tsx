@@ -1,9 +1,4 @@
-import { quizAnswers } from '@/utils';
-import React from 'react';
-import { AiFillCheckCircle, AiFillCloseCircle } from 'react-icons/ai';
-import ReadOnlyCheckbox from './ReadOnlyCheckbox';
-import QuizTask from './QuizTask';
-import QuizComponent from './QuizContainer';
+import QuizComponent from '../quizContent/QuizContainer';
 
 function QuizesContainer() {
 	return (
@@ -25,7 +20,6 @@ function QuizesContainer() {
 						<ReadOnlyCheckbox key={index} text={quiz.text} isChecked={quiz.isChecked} />
 					))}
 				</section> */}
-
 				<QuizComponent />
 			</div>
 		</div>
