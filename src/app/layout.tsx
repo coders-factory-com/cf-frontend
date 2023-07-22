@@ -12,10 +12,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 	return (
 		<html lang='en'>
 			<body>
-				<GlobalProvider>
-					<Sidebar />
-					{children}
-				</GlobalProvider>
+				<GlobalProvider>{children}</GlobalProvider>
 			</body>
 		</html>
 	);

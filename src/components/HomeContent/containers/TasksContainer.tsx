@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Editor, { OnValidate } from '@monaco-editor/react';
 import { files } from '@/utils';
 import Button from '@/common/Button';
@@ -32,6 +32,7 @@ const TaskContainer: React.FC = () => {
 			<Button
 				addedClassName='ml-12 my-8'
 				text='Submit'
+				variant='primary'
 				onClick={() => {
 					handleSaveClick();
 				}}

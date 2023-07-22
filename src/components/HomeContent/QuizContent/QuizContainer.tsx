@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import QuizTask from './QuizTask';
 import { quizData } from '@/utils';
 import Button from '@/common/Button';

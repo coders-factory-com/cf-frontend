@@ -6,7 +6,7 @@ export const cards = [
 ];
 
 export const navbarIcons = [
-	{ iconSrc: '/Home.svg', text: 'Home', path: '/' },
+	{ iconSrc: '/Home.svg', text: 'Home', path: '/home' },
 	{ iconSrc: '/IBM-cloud.svg', text: 'Study plan', path: '/study_plan' },
 	{ iconSrc: '/Virtual-private.svg', text: 'Quizes', path: '/quizes' },
 	{ iconSrc: '/IBM-z-cloud.svg', text: 'Other', path: '/other' },
@@ -14,25 +14,153 @@ export const navbarIcons = [
 ];
 
 export const socialIcons = [
-    {
-      src: '/facebook-icon.svg',
-      alt: 'facebook icon'
-    },
-    {
-      src: '/google-icon.svg',
-      alt: 'google icon'
-    },
-    {
-      src: '/linkedin-icon.svg',
-      alt: 'linkedin icon'
-    },
-    {
-      src: '/github-icon.svg',
-      alt: 'github icon'
-    }
-  ];
+	{
+		src: '/facebook-icon.svg',
+		alt: 'facebook icon',
+	},
+	{
+		src: '/google-icon.svg',
+		alt: 'google icon',
+	},
+	{
+		src: '/linkedin-icon.svg',
+		alt: 'linkedin icon',
+	},
+	{
+		src: '/github-icon.svg',
+		alt: 'github icon',
+	},
+];
 
-export const breadcrumbsData = [{ text: 'Home' }, { text: 'Technology' }, { text: 'Programming' }, { text: 'Javascript' }, { text: 'Basics' }];
+export const categories = [
+	{
+		name: 'Frontend Development',
+		href: 'frontend-development',
+		subcategories: [
+			{ name: 'HTML', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+			{ name: 'CSS', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+			{ name: 'JavaScript', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+			{ name: 'React', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+			{ name: 'Angular', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+			{ name: 'Vue', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+		],
+	},
+	{
+		name: 'Backend Development',
+		href: 'backend-development',
+		subcategories: [
+			{ name: 'Node.js', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+			{ name: 'Python', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+			{ name: 'Java', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+			{ name: 'Ruby', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+			{ name: 'PHP', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+			{ name: 'Go', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+		],
+	},
+	{
+		name: 'Full Stack Development',
+		href: 'fullstack-development',
+		subcategories: [
+			{ name: 'MERN Stack', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+			{ name: 'MEAN Stack', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+			{ name: 'MEVN Stack', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+			{ name: 'LAMP Stack', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+		],
+	},
+	{
+		name: 'Data Science',
+		href: 'data-science',
+		subcategories: [
+			{ name: 'R', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+			{ name: 'Python', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+			{ name: 'Machine Learning', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+			{ name: 'Data Visualization', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+		],
+	},
+	{
+		name: 'Machine Learning',
+		href: 'machine-learning',
+		subcategories: [
+			{ name: 'Python', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+			{ name: 'Deep Learning', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+			{ name: 'Natural Language Processing', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+		],
+	},
+	{
+		name: 'Artificial Intelligence',
+		href: 'artificial-intelligence',
+		subcategories: [
+			{ name: 'Python', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+			{ name: 'Machine Learning', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+			{ name: 'Deep Learning', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+			{ name: 'Computer Vision', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+		],
+	},
+	{
+		name: 'Cloud Computing',
+		href: 'cloud-computing',
+		subcategories: [
+			{ name: 'AWS', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+			{ name: 'Azure', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+			{ name: 'Google Cloud', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+		],
+	},
+	{
+		name: 'DevOps',
+		href: 'devops',
+		subcategories: [
+			{ name: 'CI/CD', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+			{ name: 'Docker', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+			{ name: 'Kubernetes', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+		],
+	},
+	{
+		name: 'Cybersecurity',
+		href: 'cybersecurity',
+		subcategories: [
+			{ name: 'Network Security', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+			{ name: 'Web Security', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+			{ name: 'Ethical Hacking', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+		],
+	},
+	{
+		name: 'Mobile App Development',
+		href: 'mobile-app-development',
+		subcategories: [
+			{ name: 'Android Development', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+			{ name: 'iOS Development', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+			{ name: 'React Native', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+		],
+	},
+	{
+		name: 'Game Development',
+		href: 'game-development',
+		subcategories: [
+			{ name: 'Unity', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+			{ name: 'Unreal Engine', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+			{ name: 'C#', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+		],
+	},
+	{
+		name: 'Databases',
+		href: 'databases',
+		subcategories: [
+			{ name: 'SQL', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+			{ name: 'NoSQL', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+			{ name: 'PostgreSQL', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+			{ name: 'MongoDB', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+		],
+	},
+	{
+		name: 'Software Testing',
+		href: 'software-testing',
+		subcategories: [
+			{ name: 'Unit Testing', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+			{ name: 'Integration Testing', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+			{ name: 'End-to-End Testing', levels: ['Beginner', 'Intermediate', 'Advanced'] },
+		],
+	},
+];
 
 export const topicCards = [{ title: 'Theory' }, { title: 'Tasks' }, { title: 'Quizes' }, { title: 'Other' }];
 

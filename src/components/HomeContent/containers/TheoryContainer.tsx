@@ -1,10 +1,8 @@
-import React from 'react';
-import Section from '../Section';
-import Image from 'next/image';
+import Section from '../../Section';
 import { cards, sections } from '@/utils';
-import Card from '../Card';
-import ScrollProgressBar from '../ScrollProgressBar';
-import Notes from '../Notes';
+import Card from '../../Card';
+import ScrollProgressBar from '../../ScrollProgressBar';
+import Notes from '../../Notes';
 
 function TheoryContainer() {
 	return (
@@ -31,4 +29,4 @@ function TheoryContainer() {
 	);
 }
 
-export default TheoryContainer
+export default TheoryContainer;

@@ -6,7 +6,7 @@ import { FormEvent, useState } from 'react';
 import { AiOutlineLock } from 'react-icons/ai';
 import { Input } from '@/common/Input';
 import { socialIcons } from '@/utils';
-import FormHeader from './FormHeader';
+import FormHeader from '../FormHeader';
 import { z } from 'zod';
 import ErrorMessage from '@/common/ErrorMessage';
 import Button from '@/common/Button';
