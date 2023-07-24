@@ -1,14 +1,5 @@
-import { NextResponse } from 'next/server';
-import { getServerSession } from 'next-auth/next';
-import { authOptions } from './app/api/auth/[...nextauth]/route';
-export async function middleware() {
-	// const session = await getServerSession(authOptions);
-	// if (!session) {
-	// 	return NextResponse.redirect(`/auth/signup`);
-	// }
-	// return NextResponse.next();
-}
+export { default } from 'next-auth/middleware';
 
 export const config = {
-	matcher: '/home/:path*',
+	matcher: ['/home/:path*', '/study_plan/:path*', '/quizes/:path*', '/other/:path*', '/flashcards/:path*', '/user/:path*'],
 };
