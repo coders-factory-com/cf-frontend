@@ -9,6 +9,7 @@ export default function UserContentLayout({ children }: { children: React.ReactN
 	return (
 		<main>
 			<Sidebar />
+
 			{isHome && <NavigationBreadcrumb />}
 			{children}
 		</main>

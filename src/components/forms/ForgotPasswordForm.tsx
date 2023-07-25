@@ -19,7 +19,6 @@ function ForgotPasswordForm() {
 	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		const result = ForgotPasswordFormSchema.safeParse({ email });
-
 		if (result.success) {
 			setErrors(null);
 			console.log('E-mail:', result.data);

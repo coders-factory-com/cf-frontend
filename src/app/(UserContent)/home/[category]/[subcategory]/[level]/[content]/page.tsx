@@ -31,7 +31,7 @@ function ContentPage() {
 
 	return (
 		<>
-			<header className='left- [270px] -z-10 top-[30px] absolute justify-start flex-col items-start gap-2 flex'>
+			<header className='left-[270px] -z-10 top-[30px] absolute justify-start flex-col items-start gap-2 flex'>
 				<div className=' text-black text-[24px] font-medium'>Functional data processing with streams</div>
 				<div className='justify-start items-start gap-[1px] flex'>
 					<div className='justify-start items-start gap-[1px] flex'>

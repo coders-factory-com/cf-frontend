@@ -1,6 +1,6 @@
 import { notes as initialNotes } from '@/utils/index';
 import Image from 'next/image';
-import  { useState } from 'react';
+import { useState } from 'react';
 import '@/app/globals.css';
 
 function Notes() {
@@ -39,7 +39,7 @@ function Notes() {
 							onClick={() => {
 								handleDeleteNote(note.id);
 							}}>
-							<Image src='./Trash-can.svg' width={20} height={20} alt='' className='absolute cursor-pointer bottom-6 right-6' />
+							<Image src='/Trash-can.svg' width={20} height={20} alt='' className='absolute cursor-pointer bottom-6 right-6' />
 						</div>
 					</div>
 				))

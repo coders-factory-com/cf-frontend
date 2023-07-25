@@ -4,10 +4,9 @@ interface BreadcrumbProps {
 	handleClick: (index: number) => void;
 }
 type BreadcrumbType = {
-    text: string;
-    href: string;
+	text: string;
+	href: string;
 };
-
 
 interface CardProps {
 	title: string;
@@ -104,3 +103,7 @@ interface LinkListProps {
 	data: Array<Item>;
 	urlMapper: (item: Item) => string;
 }
+
+interface Session extends NextAuthSession {
+    jwt: string;
+  }
