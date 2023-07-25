@@ -10,6 +10,7 @@ import FormHeader from '../FormHeader';
 import { z } from 'zod';
 import ErrorMessage from '@/common/ErrorMessage';
 import Button from '@/common/Button';
+import { signIn } from 'next-auth/react';
 
 const RegisterFormSchema = z.object({
 	name: z
@@ -77,7 +78,16 @@ const RegisterForm = () => {
 				<ul className='flex w-full justify-between px-4 mt-4'>
 					{socialIcons.map((icon, index) => (
 						<li key={index} className={`${index !== socialIcons.length - 1 ? 'px-8 border-r-[1px] border-gray-200' : 'pr-8'}`}>
-							<Image width={40} height={40} className='cursor-pointer' src={icon.src} alt={icon.alt} />
+							<Image
+								width={40}
+								height={40}
+								className='cursor-pointer'
+								src={icon.src}
+								alt={icon.alt}
+								onClick={() => {
+									signIn(icon.provider, { callbackUrl: `${window.location.origin}/home` });
+								}}
+							/>
 						</li>
 					))}
 				</ul>

@@ -4,6 +4,7 @@ import { navbarIcons } from '@/utils';
 import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
+import ContentLoader from 'react-content-loader';
 
 function Sidebar() {
 	const { data: session, status } = useSession();
@@ -36,7 +37,12 @@ function Sidebar() {
 				</nav>
 			</div>
 			{status === 'loading' ? (
-				<Loader size='4' />
+				<div className='w-full  flex justify-center items-center h-20'>
+					<ContentLoader speed={2} width='100%' height='100%' viewBox='-60 0 256 44' backgroundColor='#9d9b9b' foregroundColor='#ffffff'>
+						<rect x='59' y='16' rx='3' ry='3' width='88' height='11' />
+						<circle cx='20' cy='20' r='20' />
+					</ContentLoader>
+				</div>
 			) : (
 				<Link href='/user/profile' className=' self-stretch h-20 px-4 justify-center items-center gap-3 flex'>
 					{session?.user?.image ? <Image src={session.user.image} alt={session.user.name || 'user photo'} height={28} width={28} className='inline-block rounded-full' /> : <Image height={28} width={28} className=' rounded-full border border-white object-contain' src='/Ellipse.png' alt='placeholder' />}

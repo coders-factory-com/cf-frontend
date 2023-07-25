@@ -26,7 +26,7 @@ const authOptions = {
 		CredentialsProvider({
 			name: 'Credentials',
 			credentials: {
-				username: { label: 'Email', type: 'text', placeholder: 'jsmith@example.com' },
+				username: { label: 'Email', type: 'text' },
 				password: { label: 'Password', type: 'password' },
 			},
 			authorize: async credentials => {

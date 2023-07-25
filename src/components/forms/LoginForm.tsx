@@ -27,7 +27,13 @@ const LoginForm = () => {
 		const result = LoginFormSchema.safeParse({ email, password });
 		if (result.success) {
 			setErrors(null);
-			console.log('Dane logowania:', result.data);
+			signIn('credentials', {
+				email,
+				password,
+				callbackUrl: '/home',
+			}).catch(error => {
+				console.log(error);
+			});
 		} else {
 			setErrors(result.error.formErrors.fieldErrors);
 		}
@@ -75,9 +81,7 @@ const LoginForm = () => {
 								src={icon.src}
 								alt={icon.alt}
 								onClick={() => {
-									if (icon.alt === 'google icon') {
-										signIn('google', { callbackUrl: `${window.location.origin}/home` });
-									}
+									signIn(icon.provider, { callbackUrl: `${window.location.origin}/home` });
 								}}
 							/>
 						</li>
