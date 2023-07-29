@@ -1,8 +1,4 @@
-interface BreadcrumbProps {
-	text: string;
-	index: number;
-	handleClick: (index: number) => void;
-}
+
 type BreadcrumbType = {
 	text: string;
 	href: string;
