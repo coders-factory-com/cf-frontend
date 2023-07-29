@@ -1,7 +1,7 @@
 'use client';
 import { usePathname } from 'next/navigation';
 import { categories} from '@/utils';
-import LinkList from '@/common/LinkList';
+import LinkList from '@/components/common/LinkList';
 
 export default function SubCategoriesList() {
 	const pathname = usePathname();

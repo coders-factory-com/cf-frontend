@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Editor, { OnValidate } from '@monaco-editor/react';
 import { files } from '@/utils';
-import Button from '@/common/Button';
+import Button from '@/components/common/Button';
 
 const TaskContainer: React.FC = () => {
 	const [value, setValue] = useState<string>('');

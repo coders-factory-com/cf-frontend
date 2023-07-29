@@ -1,5 +1,5 @@
 'use client';
-import { Input } from '@/common/Input';
+import { Input } from '@/components/common/Input';
 import { socialIcons } from '@/utils';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -8,8 +8,8 @@ import { AiOutlineLock, AiOutlineMail } from 'react-icons/ai';
 import { FiUser } from 'react-icons/fi';
 import FormHeader from '../FormHeader';
 import { z } from 'zod';
-import ErrorMessage from '@/common/ErrorMessage';
-import Button from '@/common/Button';
+import ErrorMessage from '@/components/common/ErrorMessage';
+import Button from '@/components/common/Button';
 import { signIn } from 'next-auth/react';
 
 const RegisterFormSchema = z.object({

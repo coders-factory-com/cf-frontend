@@ -1,11 +1,11 @@
 'use client';
 import Link from 'next/link';
 import { FormEvent, useState } from 'react';
-import { Input } from '@/common/Input';
+import { Input } from '@/components/common/Input';
 import FormHeader from '../FormHeader';
 import { z } from 'zod';
-import ErrorMessage from '@/common/ErrorMessage';
-import Button from '@/common/Button';
+import ErrorMessage from '@/components/common/ErrorMessage';
+import Button from '@/components/common/Button';
 
 const ForgotPasswordFormSchema = z.object({
 	email: z.string().email('Invalid email format'),

@@ -1,7 +1,7 @@
 
 import AnswerCheckbox from './AnswerCheckbox';
-import ErrorMessage from '@/common/ErrorMessage';
-import SuccessMessage from '@/common/SuccessMessage';
+import ErrorMessage from '@/components/common/ErrorMessage';
+import SuccessMessage from '@/components/common/SuccessMessage';
 
 interface QuizTaskProps {
 	task: {

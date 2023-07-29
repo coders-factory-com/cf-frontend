@@ -1,4 +1,4 @@
-import Loader from '@/common/Loader';
+import Loader from '@/components/common/Loader';
 import NavbarIcons from './NavbarIcons';
 import { navbarIcons } from '@/utils';
 import { useSession } from 'next-auth/react';
