@@ -8,10 +8,6 @@ type BreadcrumbType = {
 	href: string;
 };
 
-interface CardProps {
-	title: string;
-	readTime: string;
-}
 
 
 

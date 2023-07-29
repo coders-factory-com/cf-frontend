@@ -1,19 +1,17 @@
 'use client';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+interface CardProps {
+	title: string;
+	readTime: string;
+}
 
 function Card({ title, readTime }: CardProps) {
 	const [isActive, setIsActive] = useState(false);
 
 	useEffect(() => {
 		const handleIntersection = (entries: IntersectionObserverEntry[]) => {
-			entries.forEach(entry => {
-				if (entry.isIntersecting) {
-					setIsActive(true);
-				} else {
-					setIsActive(false);
-				}
-			});
+			entries.forEach(entry => setIsActive(!!entry.intersectionRatio));
 		};
 
 		const observer = new IntersectionObserver(handleIntersection, {
