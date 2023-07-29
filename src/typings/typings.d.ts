@@ -13,12 +13,6 @@ interface CardProps {
 	readTime: string;
 }
 
-interface NavbarIconsProps {
-	iconSrc: string;
-	text: string;
-	path: string;
-}
-
 
 
 
