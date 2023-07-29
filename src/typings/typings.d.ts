@@ -24,14 +24,6 @@ interface MarkerProps {
 	message: string;
 }
 
-interface InputProps {
-	icon?: ReactNode;
-	placeholder: string;
-	isPassword?: boolean;
-	value?: string;
-	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-}
-
 type ErrorSchema = z.infer<typeof x>;
 
 interface Item {
