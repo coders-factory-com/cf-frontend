@@ -1,21 +1,21 @@
 export const SOCIAL_PROVIDER_ICONS = [
     {
-        src: '/facebook-icon.svg',
+        src: '/provider/facebook.svg',
         alt: 'facebook icon',
         provider: 'facebook',
     },
     {
-        src: '/google-icon.svg',
+        src: '/provider/google.svg',
         alt: 'google icon',
         provider: 'google',
     },
     {
-        src: '/linkedin-icon.svg',
+        src: '/provider/linkedin.svg',
         alt: 'linkedin icon',
         provider: 'linkedin',
     },
     {
-        src: '/github-icon.svg',
+        src: '/provider/github.svg',
         alt: 'github icon',
         provider: 'github',
     },
