@@ -1,7 +1,6 @@
 import { notes as initialNotes } from '@/utils/index';
 import Image from 'next/image';
 import { useState } from 'react';
-import '@/app/globals.css';
 
 function Notes() {
 	const [notes, setNotes] = useState(initialNotes);
@@ -12,7 +11,7 @@ function Notes() {
 			content: 'New note',
 		};
 
-		setNotes([...notes, newNote]);
+		setNotes(prevState => [...prevState, newNote]);
 	};
 
 	const handleDeleteNote = (noteId: number) => {
