@@ -4,16 +4,6 @@ type BreadcrumbType = {
 	href: string;
 };
 
-
-
-
-
-
-
-
-
-
-
 interface FileProps {
 	name: string;
 	language: string;

@@ -1,7 +1,9 @@
 import Link from 'next/link';
-
-export default function LinkList({ data, urlMapper }: LinkListProps) {
-	return (
+interface LinkListProps {
+	data: Array<Item>;
+	urlMapper: (item: Item) => string;
+}
+const LinkList =  ({data, urlMapper}: LinkListProps) => (
 		<ul>
 			{data.map((item, index: number) => (
 				<li key={index}>
@@ -10,4 +12,4 @@ export default function LinkList({ data, urlMapper }: LinkListProps) {
 			))}
 		</ul>
 	);
-}
+export default LinkList;
