@@ -1,6 +1,5 @@
 'use client';
 import { Input } from '@/components/common/Input';
-import { socialIcons } from '@/utils';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FormEvent, useState } from 'react';
@@ -11,6 +10,7 @@ import { z } from 'zod';
 import ErrorMessage from '@/components/common/ErrorMessage';
 import Button from '@/components/common/Button';
 import { signIn } from 'next-auth/react';
+import {SOCIAL_PROVIDER_ICONS} from "@/constants";
 
 const RegisterFormSchema = z.object({
 	name: z
@@ -76,8 +76,8 @@ const RegisterForm = () => {
 					<hr className='w-full' />
 				</div>
 				<ul className='flex w-full justify-between px-4 mt-4'>
-					{socialIcons.map((icon, index) => (
-						<li key={index} className={`${index !== socialIcons.length - 1 ? 'px-8 border-r-[1px] border-gray-200' : 'pr-8'}`}>
+					{SOCIAL_PROVIDER_ICONS.map((icon, index) => (
+						<li key={index} className={`${index !== SOCIAL_PROVIDER_ICONS.length - 1 ? 'px-8 border-r-[1px] border-gray-200' : 'pr-8'}`}>
 							<Image
 								width={40}
 								height={40}

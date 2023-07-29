@@ -1,0 +1,1 @@
+export * from './social-provider-icons.constant';

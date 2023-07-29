@@ -13,29 +13,6 @@ export const navbarIcons = [
 	{ iconSrc: '/IBM--power-vs.svg', text: 'Flashcards', path: '/flashcards' },
 ];
 
-export const socialIcons = [
-	{
-		src: '/facebook-icon.svg',
-		alt: 'facebook icon',
-		provider: 'facebook',
-	},
-	{
-		src: '/google-icon.svg',
-		alt: 'google icon',
-		provider: 'google',
-	},
-	{
-		src: '/linkedin-icon.svg',
-		alt: 'linkedin icon',
-		provider: 'linkedin',
-	},
-	{
-		src: '/github-icon.svg',
-		alt: 'github icon',
-		provider: 'github',
-	},
-];
-
 export const categories = [
 	{
 		name: 'Frontend Development',
