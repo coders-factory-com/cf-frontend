@@ -6,7 +6,7 @@ interface CardProps {
 	readTime: string;
 }
 
-function Card({ title, readTime }: CardProps) {
+const Card = ({ title, readTime }: CardProps) => {
 	const [isActive, setIsActive] = useState(false);
 
 	useEffect(() => {
@@ -51,6 +51,6 @@ function Card({ title, readTime }: CardProps) {
 			</div>
 		</a>
 	);
-}
+};
 
 export default Card;
