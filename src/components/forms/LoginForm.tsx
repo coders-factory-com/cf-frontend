@@ -10,7 +10,7 @@ import { z } from 'zod';
 import ErrorMessage from '@/components/common/ErrorMessage';
 import Button from '@/components/common/Button';
 import { signIn } from 'next-auth/react';
-import {SOCIAL_PROVIDER_ICONS} from "@/constants";
+import {SOCIAL_PROVIDER_ICONS} from "@/constants/social-provider.constant";
 
 const LoginFormSchema = z.object({
 	email: z.string().email('Invalid email format'),

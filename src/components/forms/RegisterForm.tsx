@@ -3,14 +3,14 @@ import { Input } from '@/components/common/Input';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FormEvent, useState } from 'react';
+import { z } from 'zod';
 import { AiOutlineLock, AiOutlineMail } from 'react-icons/ai';
 import { FiUser } from 'react-icons/fi';
 import FormHeader from '../FormHeader';
-import { z } from 'zod';
 import ErrorMessage from '@/components/common/ErrorMessage';
+import {SOCIAL_PROVIDER_ICONS} from "@/constants/social-provider.constant";
 import Button from '@/components/common/Button';
 import { signIn } from 'next-auth/react';
-import {SOCIAL_PROVIDER_ICONS} from "@/constants";
 
 const RegisterFormSchema = z.object({
 	name: z
