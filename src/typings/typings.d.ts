@@ -19,12 +19,7 @@ interface NavbarIconsProps {
 	path: string;
 }
 
-interface SectionProps {
-	title: string;
-	timeRead: string;
-	content: string;
-	image?: string | null;
-}
+
 
 
 interface ReadOnlyCheckboxProps {
