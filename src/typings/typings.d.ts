@@ -26,11 +26,6 @@ interface SectionProps {
 	image?: string | null;
 }
 
-interface TopicCardProps {
-	title: string;
-	onClick: () => void;
-	isActive: boolean;
-}
 
 interface ReadOnlyCheckboxProps {
 	text: string;
