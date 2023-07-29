@@ -1,4 +1,12 @@
 import clsx from 'clsx';
+interface ButtonProps {
+	text: string;
+	type?: 'submit' | 'button';
+	onClick?: () => void;
+	disabled?: boolean;
+	variant: 'primary' | 'secondary';
+	addedClassName?: string;
+}
 
 const Button = ({ type, text, onClick, disabled, variant = 'primary', addedClassName }: ButtonProps) => {
 	const baseClasses = 'disabled:opacity-60 my-4 border px-6 py-4 text-center cursor-pointer text-[14px] transition-colors duration-300 ease-in-out leading-none tracking-wide';

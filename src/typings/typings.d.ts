@@ -13,14 +13,6 @@ type BreadcrumbType = {
 
 
 
-interface ButtonProps {
-	text: string;
-	type?: 'submit' | 'button';
-	onClick?: () => void;
-	disabled?: boolean;
-	variant: 'primary' | 'secondary';
-	addedClassName?: string;
-}
 
 interface FileProps {
 	name: string;
