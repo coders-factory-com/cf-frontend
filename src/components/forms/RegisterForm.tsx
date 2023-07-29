@@ -11,6 +11,7 @@ import ErrorMessage from '@/components/common/ErrorMessage';
 import {SOCIAL_PROVIDER_ICONS} from "@/constants/social-provider.constant";
 import Button from '@/components/common/Button';
 import { signIn } from 'next-auth/react';
+import {Navigation} from "@/enums/navigation.enum";
 
 const RegisterFormSchema = z.object({
 	name: z
@@ -45,10 +46,10 @@ const RegisterForm = () => {
 			<FormHeader />
 			<div className='shadow-lg pb-8   bg-white'>
 				<div className='relative overflow-hidden h-14 '>
-					<Link href='/auth/signup' className='relative w-1/2 py-4 z-[1] inline-block text-center  bg-white right-shadow font-bold'>
+					<Link href={Navigation.AuthSignUp} className='relative w-1/2 py-4 z-[1] inline-block text-center  bg-white right-shadow font-bold'>
 						Sign Up
 					</Link>
-					<Link className='relative w-1/2 text-center inline-block py-4 z-0 bg-[#f9fbfb] font-bold' href='/auth/login'>
+					<Link className='relative w-1/2 text-center inline-block py-4 z-0 bg-[#f9fbfb] font-bold' href={Navigation.AuthLogin}>
 						Login
 					</Link>
 				</div>
@@ -64,7 +65,7 @@ const RegisterForm = () => {
 							<input id='remember' className='mr-4 w-4 h-4 accent-green-700' type='checkbox' />
 							Remember me
 						</label>
-						<Link className='text-blue-600 underline' href='/auth/forgot_password'>
+						<Link className='text-blue-600 underline' href={Navigation.AuthForgotPassword}>
 							Forgot your password?
 						</Link>
 					</div>

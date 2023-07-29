@@ -5,4 +5,5 @@ export enum Navigation {
     AuthSignUp = '/auth/signup',
     AuthForgotPassword = '/auth/forgot-password',
     HomeProgramming = '/home/programming',
+    UserProfile = '/user/profile',
 }
