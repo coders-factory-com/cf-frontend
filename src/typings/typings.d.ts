@@ -24,20 +24,7 @@ interface AnswerCheckboxProps {
 	quizId: number;
 }
 
-interface QuizTaskProps {
-	task: {
-		id: number;
-		question: string;
-		description: string;
-		options: [{ id: number; text: string }];
-		correctAnswerId: number;
-	};
-	selectedAnswer: number;
-	onAnswerSelected: (id: number) => void;
-	submitted: boolean;
-	errors: { [quizId: number]: { [taskId: number]: string } };
-	quizId: number;
-}
+
 
 interface ButtonProps {
 	text: string;

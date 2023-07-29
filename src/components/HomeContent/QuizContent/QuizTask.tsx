@@ -3,6 +3,28 @@ import AnswerCheckbox from './AnswerCheckbox';
 import ErrorMessage from '@/common/ErrorMessage';
 import SuccessMessage from '@/common/SuccessMessage';
 
+interface QuizTaskProps {
+	task: {
+		id: number;
+		question: string;
+		description: string;
+		options: [{
+			id: number;
+			text: string
+		}];
+		correctAnswerId: number;
+	};
+	selectedAnswer: number;
+	onAnswerSelected: (id: number) => void;
+	submitted: boolean;
+	errors: {
+		[quizId: number]: {
+			[taskId: number]: string
+		}
+	};
+	quizId: number;
+}
+
 const QuizTask = ({ quizId, task, errors, selectedAnswer, onAnswerSelected, submitted }: QuizTaskProps) => {
 	const { question, description, options, correctAnswerId, id } = task;
 
