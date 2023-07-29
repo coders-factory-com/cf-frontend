@@ -1,16 +1,12 @@
 'use client';
 import Button from '@/common/Button';
-
-import { login, selectIsLoggedIn } from '@/redux/authSlice';
-import { mainPagePhotoData, topicCards } from '@/utils';
-import { signIn } from 'next-auth/react';
+import { mainPagePhotoData } from '@/utils';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { useDispatch } from 'react-redux';
+import {Navigation} from "@/enums/navigation.enum";
 
 export default function HomePage() {
-	const router = useRouter();
-	const dispatch = useDispatch();
+	const {push} = useRouter();
 
 	return (
 		<main className=' max-w-[100vw]  min-h-screen h-full'>
@@ -19,17 +15,13 @@ export default function HomePage() {
 				<div className=' items-center justify-center w-full space-x-12 flex my-12'>
 					<Button
 						variant='primary'
-						onClick={() => {
-							router.push(`/auth/login`);
-						}}
+						onClick={() => push(Navigation.AuthLogin)}
 						text='Login'
 					/>
 					<Button
 						variant='primary'
 						text='Sign Up'
-						onClick={() => {
-							router.push(`/auth/signup`);
-						}}
+						onClick={() => push(Navigation.AuthLogin)}
 					/>
 				</div>
 
