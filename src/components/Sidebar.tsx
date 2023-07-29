@@ -6,9 +6,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import ContentLoader from 'react-content-loader';
 
-function Sidebar() {
+const Sidebar = () => {
 	const { data: session, status } = useSession();
-
 	return (
 		<div className='w-[190px] z-10 h-full left-0 fixed top-0 bg-neutral-800 flex-col items-start justify-between gap-[60px] flex'>
 			<div className='self-stretch h-[526px] '>
@@ -51,6 +50,6 @@ function Sidebar() {
 			)}
 		</div>
 	);
-}
+};
 
 export default Sidebar;
