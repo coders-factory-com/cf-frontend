@@ -1,7 +1,11 @@
 import { BiSolidCheckSquare, BiSquare } from 'react-icons/bi';
 
-const ReadOnlyCheckbox = ({ text, isChecked }: ReadOnlyCheckboxProps) => {
-	return (
+interface ReadOnlyCheckboxProps {
+	text: string;
+	isChecked: boolean;
+}
+
+const ReadOnlyCheckbox = ({ text, isChecked }: ReadOnlyCheckboxProps) =>(
 		<div className='bg-white flex-col justify-start items-start gap-2 flex'>
 			<div className='justify-start items-center gap-2 flex'>
 				<div className='relative bg-white flex items-center justify-center'>{isChecked ? <BiSolidCheckSquare className='w-6 h-6 ' /> : <BiSquare className='w-6 h-6 ' />}</div>
@@ -11,6 +15,6 @@ const ReadOnlyCheckbox = ({ text, isChecked }: ReadOnlyCheckboxProps) => {
 			</div>
 		</div>
 	);
-};
+
 
 export default ReadOnlyCheckbox;

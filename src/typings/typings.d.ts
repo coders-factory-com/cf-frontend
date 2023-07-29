@@ -12,10 +12,7 @@ type BreadcrumbType = {
 
 
 
-interface ReadOnlyCheckboxProps {
-	text: string;
-	isChecked: boolean;
-}
+
 
 interface AnswerCheckboxProps {
 	taskId: number;
