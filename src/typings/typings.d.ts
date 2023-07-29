@@ -14,15 +14,6 @@ type BreadcrumbType = {
 
 
 
-interface AnswerCheckboxProps {
-	taskId: number;
-	id: number;
-	text: string;
-	isChecked: boolean;
-	onAnswerSelected: (id: number) => void;
-	submitted: boolean;
-	quizId: number;
-}
 
 
 

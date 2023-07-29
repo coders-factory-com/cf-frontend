@@ -1,3 +1,12 @@
+interface AnswerCheckboxProps {
+	taskId: number;
+	id: number;
+	text: string;
+	isChecked: boolean;
+	onAnswerSelected: (id: number) => void;
+	submitted: boolean;
+	quizId: number;
+}
 
 const AnswerCheckbox = ({ quizId, taskId, id, text, isChecked, onAnswerSelected, submitted }: AnswerCheckboxProps) => {
 	const uniqueId = `${quizId}-${taskId}-${id}`;
