@@ -1,8 +1,5 @@
+const UserPage = () => {
+	return <div>page</div>;
+};
 
-function UserPage() {
-  return (
-    <div>page</div>
-  )
-}
-
-export default UserPage
+export default UserPage;

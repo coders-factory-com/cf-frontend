@@ -1,8 +1,5 @@
+const OtherContainer = () => {
+	return <div>OtherContent</div>;
+};
 
-function OtherContainer() {
-  return (
-    <div>OtherContent</div>
-  )
-}
-
-export default OtherContainer
+export default OtherContainer;

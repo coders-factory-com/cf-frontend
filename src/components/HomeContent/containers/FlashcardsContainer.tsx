@@ -1,8 +1,5 @@
+const FlashcardsContainer = () => {
+	return <div>FlashcardsContainer</div>;
+};
 
-function FlashcardsContainer() {
-  return (
-    <div>FlashcardsContainer</div>
-  )
-}
-
-export default FlashcardsContainer
+export default FlashcardsContainer;

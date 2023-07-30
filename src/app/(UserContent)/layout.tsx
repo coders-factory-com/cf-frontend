@@ -1,16 +1,9 @@
-'use client';
-import NavigationBreadcrumb from '@/components/HomeContent/breadcrumb/NavigationBreadcrumb';
-import Sidebar from '@/components/Sidebar';
-import { usePathname } from 'next/navigation';
+import UserContentNavigation from "@/components/wrappers/UserContentNavigation";
 
 export default function UserContentLayout({ children }: { children: React.ReactNode }) {
-	const pathname = usePathname();
-	const isHome = pathname.startsWith('/home');
 	return (
 		<main>
-			<Sidebar />
-
-			{isHome && <NavigationBreadcrumb />}
+			<UserContentNavigation />
 			{children}
 		</main>
 	);

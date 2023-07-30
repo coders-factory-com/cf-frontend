@@ -1,6 +1,6 @@
 import QuizComponent from '../quizContent/QuizContainer';
 
-function QuizesContainer() {
+const QuizesContainer = () => {
 	return (
 		<div className='ml-[10%] flex-col justify-start items-start flex w-full h-full '>
 			<div className=' bg-white border w-full max-w-[1000px] h-full min-h-[1200px] px-6 border-neutral-200 flex-col justify-start items-start gap-6 flex'>
@@ -24,6 +24,6 @@ function QuizesContainer() {
 			</div>
 		</div>
 	);
-}
+};
 
 export default QuizesContainer;

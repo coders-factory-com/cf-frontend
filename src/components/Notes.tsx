@@ -2,7 +2,7 @@ import { notes as initialNotes } from '@/utils/index';
 import Image from 'next/image';
 import { useState } from 'react';
 
-function Notes() {
+const Notes = () => {
 	const [notes, setNotes] = useState(initialNotes);
 
 	const handleAddNote = () => {
@@ -50,6 +50,6 @@ function Notes() {
 			</div>
 		</div>
 	);
-}
+};
 
 export default Notes;
