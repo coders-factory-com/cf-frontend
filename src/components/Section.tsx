@@ -1,7 +1,12 @@
 import Image from 'next/image';
+interface SectionProps {
+	title: string;
+	timeRead: string;
+	content: string;
+	image?: string | null;
+}
 
-const Section = ({ title, timeRead, content, image }: SectionProps) => {
-	return (
+const Section = ({ title, timeRead, content, image }: SectionProps) =>  (
 		<div id={title.replace(/\s+/g, '')} className='self-stretch min-h-[600px] flex-col justify-start items-start gap-4 flex'>
 			<div className='self-stretch justify-between items-center inline-flex'>
 				<div className='text-black text-[20px] font-medium'>{title}</div>
@@ -11,9 +16,9 @@ const Section = ({ title, timeRead, content, image }: SectionProps) => {
 			</div>
 			<div className='self-strech text-neutral-700 text-[14px] font-normal leading-normal flex flex-col justify-center items-start '>
 				{content}
-				{image && <Image style={{ height: '100%', width: '100%' }} width={330} height={330} className='mt-4 min-h-[150px] max-h-[300px]  object-contain' src={image} alt='placeholder' />}
+				{!!image && <Image style={{ height: '100%', width: '100%' }} width={330} height={330} className='mt-4 min-h-[150px] max-h-[300px]  object-contain' src={image} alt='placeholder' />}
 			</div>
 		</div>
 	);
-};
+
 export default Section;

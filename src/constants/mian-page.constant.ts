@@ -1,0 +1,1 @@
+export const MAIN_PAGE_PHOTOS =  [{ image: 'https://via.placeholder.com/400x400' }, { image: 'https://via.placeholder.com/400x400' }, { image: 'https://via.placeholder.com/400x400' }, { image: 'https://via.placeholder.com/400x400' }] as const;

@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import QuizTask from './QuizTask';
 import { quizData } from '@/utils';
-import Button from '@/common/Button';
-import SuccessMessage from '@/common/SuccessMessage';
-import ErrorMessage from '@/common/ErrorMessage';
+import Button from '@/components/common/Button';
+import SuccessMessage from '@/components/common/SuccessMessage';
+import ErrorMessage from '@/components/common/ErrorMessage';
 
 const QuizContainer = () => {
 	const [answers, setAnswers] = useState<{ [quizId: number]: { [taskId: number]: number } }>({});

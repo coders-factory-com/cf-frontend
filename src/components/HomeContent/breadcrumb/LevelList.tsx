@@ -1,5 +1,5 @@
 'use client';
-import LinkList from '@/common/LinkList';
+import LinkList from '@/components/common/LinkList';
 import { categories } from '@/utils';
 import { usePathname } from 'next/navigation';
 

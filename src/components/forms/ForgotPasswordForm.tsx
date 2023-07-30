@@ -1,12 +1,12 @@
 'use client';
 import Link from 'next/link';
-import { FiUser } from 'react-icons/fi';
 import { FormEvent, useState } from 'react';
-import { Input } from '@/common/Input';
+import { Input } from '@/components/common/Input';
 import FormHeader from '../FormHeader';
 import { z } from 'zod';
-import ErrorMessage from '@/common/ErrorMessage';
-import Button from '@/common/Button';
+import ErrorMessage from '@/components/common/ErrorMessage';
+import Button from '@/components/common/Button';
+import {Navigation} from "@/enums/navigation.enum";
 
 const ForgotPasswordFormSchema = z.object({
 	email: z.string().email('Invalid email format'),
@@ -42,7 +42,7 @@ function ForgotPasswordForm() {
 				</form>
 				<p className='my-4 text-center inline-block w-full'>
 					Back to
-					<Link href='/auth/login' className='text-blue-600 underline ml-2'>
+					<Link href={Navigation.AuthLogin} className='text-blue-600 underline ml-2'>
 						Login
 					</Link>
 				</p>

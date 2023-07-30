@@ -1,16 +1,12 @@
 'use client';
-import Button from '@/common/Button';
-
-import { login, selectIsLoggedIn } from '@/redux/authSlice';
-import { mainPagePhotoData, topicCards } from '@/utils';
-import { signIn } from 'next-auth/react';
+import Button from '@/components/common/Button';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { useDispatch } from 'react-redux';
+import {Navigation} from "@/enums/navigation.enum";
+import {MAIN_PAGE_PHOTOS} from "@/constants/mian-page.constant";
 
 export default function HomePage() {
-	const router = useRouter();
-	const dispatch = useDispatch();
+	const {push} = useRouter();
 
 	return (
 		<main className=' max-w-[100vw]  min-h-screen h-full'>
@@ -19,24 +15,20 @@ export default function HomePage() {
 				<div className=' items-center justify-center w-full space-x-12 flex my-12'>
 					<Button
 						variant='primary'
-						onClick={() => {
-							router.push(`/auth/login`);
-						}}
+						onClick={() => push(Navigation.AuthLogin)}
 						text='Login'
 					/>
 					<Button
 						variant='primary'
 						text='Sign Up'
-						onClick={() => {
-							router.push(`/auth/signup`);
-						}}
+						onClick={() => push(Navigation.AuthLogin)}
 					/>
 				</div>
 
 				<h2 className='text-5xl font-bold '>Explore</h2>
 				<div className='w-full justify-evenly flex'>
 					<div className='flex justify-evenly my-8 flex-wrap  w-[800px]'>
-						{mainPagePhotoData.map((photo, index) => (
+						{MAIN_PAGE_PHOTOS.map((photo, index) => (
 							<Image alt='' width={400} height={400} key={index} className='object-contain w-1/2 p-1' src={photo.image} />
 						))}
 					</div>

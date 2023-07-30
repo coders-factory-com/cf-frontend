@@ -4,6 +4,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
+interface NavbarIconsProps {
+	iconSrc: string;
+	text: string;
+	path: string;
+}
+
 const NavbarIcons = ({ iconSrc, text, path }: NavbarIconsProps) => {
 	const pathname = usePathname();
 	const isActive = pathname.startsWith(path);
@@ -14,7 +20,6 @@ const NavbarIcons = ({ iconSrc, text, path }: NavbarIconsProps) => {
 				<Image height={20} width={20} alt='' src={iconSrc} />
 				<div className='text-white text-[12px] font-medium'>{text}</div>
 			</Link>
-
 			<div className='w-full bg-[#383838] h-[1px]' />
 		</>
 	);

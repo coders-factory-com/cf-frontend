@@ -1,5 +1,13 @@
-import { useState } from 'react';
+import {ReactNode, useState} from 'react';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
+
+interface InputProps {
+	icon?: ReactNode;
+	placeholder: string;
+	isPassword?: boolean;
+	value?: string;
+	onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
 
 export const Input = ({ icon, placeholder, isPassword = false, ...props }: InputProps) => {
 	const [showPassword, setShowPassword] = useState(false);

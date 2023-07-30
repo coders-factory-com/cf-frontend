@@ -4,13 +4,14 @@ import Link from 'next/link';
 import { FiUser } from 'react-icons/fi';
 import { FormEvent, useState } from 'react';
 import { AiOutlineLock } from 'react-icons/ai';
-import { Input } from '@/common/Input';
-import { socialIcons } from '@/utils';
+import { Input } from '@/components/common/Input';
 import FormHeader from '../FormHeader';
 import { z } from 'zod';
-import ErrorMessage from '@/common/ErrorMessage';
-import Button from '@/common/Button';
+import ErrorMessage from '@/components/common/ErrorMessage';
+import Button from '@/components/common/Button';
 import { signIn } from 'next-auth/react';
+import {SOCIAL_PROVIDER_ICONS} from "@/constants/social-provider.constant";
+import {Navigation} from "@/enums/navigation.enum";
 
 const LoginFormSchema = z.object({
 	email: z.string().email('Invalid email format'),
@@ -43,10 +44,10 @@ const LoginForm = () => {
 			<FormHeader />
 			<div className='shadow-lg pb-8 bg-white'>
 				<div className='relative overflow-hidden h-14 '>
-					<Link href='/auth/signup' className='relative w-1/2 text-center inline-block py-4 z-0 bg-[#f9fbfb] font-bold'>
+					<Link href={Navigation.AuthSignUp} className='relative w-1/2 text-center inline-block py-4 z-0 bg-[#f9fbfb] font-bold'>
 						Sign Up
 					</Link>
-					<Link href='/auth/login' className='relative inline-block text-center w-1/2 py-4 z-[1]  bg-white left-shadow font-bold'>
+					<Link href={Navigation.AuthLogin} className='relative inline-block text-center w-1/2 py-4 z-[1]  bg-white left-shadow font-bold'>
 						Login
 					</Link>
 				</div>
@@ -60,7 +61,7 @@ const LoginForm = () => {
 							<input id='remember' className='mr-4 w-4 h-4 accent-green-700' type='checkbox' />
 							Remember me
 						</label>
-						<Link className='text-blue-600 underline' href='/auth/forgot_password'>
+						<Link className='text-blue-600 underline' href={Navigation.AuthForgotPassword}>
 							Forgot your password?
 						</Link>
 					</div>
@@ -72,8 +73,8 @@ const LoginForm = () => {
 					<hr className='w-full' />
 				</div>
 				<ul className='flex w-full justify-between px-4 mt-4'>
-					{socialIcons.map((icon, index) => (
-						<li key={index} className={`${index !== socialIcons.length - 1 ? 'px-8 border-r-[1px] border-gray-200' : 'pr-8'}`}>
+					{SOCIAL_PROVIDER_ICONS.map((icon, index) => (
+						<li key={index} className={`${index !== SOCIAL_PROVIDER_ICONS.length - 1 ? 'px-8 border-r-[1px] border-gray-200' : 'pr-8'}`}>
 							<Image
 								width={40}
 								height={40}
