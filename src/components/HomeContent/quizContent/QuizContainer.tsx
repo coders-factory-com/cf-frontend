@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import QuizTask from './QuizTask';
-import { quizData } from '@/utils';
+import { quizData } from '@/services/get-quizzes';
 import Button from '@/components/common/Button';
 import SuccessMessage from '@/components/common/SuccessMessage';
 import ErrorMessage from '@/components/common/ErrorMessage';
