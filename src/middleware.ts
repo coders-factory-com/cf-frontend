@@ -11,11 +11,17 @@ export default withAuth(
 	},
 	{
 		callbacks: {
-			authorized: ({ token }) => !!token,
+			authorized: ({ token, req }) => {
+				if (req.nextUrl.pathname === '/') {
+					return true;
+				} else {
+					return !!token;
+				}
+			},
 		},
 	}
 );
 
 export const config = {
-	matcher: ['/home/:path*', '/study_plan/:path*', '/quizes/:path*', '/other/:path*', '/flashcards/:path*', '/user/:path*'],
+	matcher: ['/', '/home/:path*', '/study_plan/:path*', '/quizes/:path*', '/other/:path*', '/flashcards/:path*', '/user/:path*'],
 };

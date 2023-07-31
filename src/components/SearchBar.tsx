@@ -19,7 +19,7 @@ function SearchBar() {
 			<div className={`self-stretch h-auto px-5 py-4  bg-neutral-900 flex-col justify-center items-center gap-2.5 flex  transition-all duration-300 ease-in-out`}>
 				<div
 					onClick={() => {
-						setIsOpen(!isOpen);
+						setIsOpen(prev=>!prev);
 					}}
 					className={`p-3 self-stretch ${isOpen ? 'opacity-0' : 'opacity-100'} cursor-pointer duration-300 transition-opacity ease-in-out relative bg-zinc-800 border-neutral-400 border-b-2 order-b-bg-neutral-900 gap-4 justify-center items-center flex`}>
 					<Image height={48} width={48} alt='' src='/Search.svg' />
