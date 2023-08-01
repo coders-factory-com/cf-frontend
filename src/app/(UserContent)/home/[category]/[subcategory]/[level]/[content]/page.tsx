@@ -9,7 +9,7 @@ import { useState } from 'react';
 import { categories, topicCards } from '@/utils';
 import { usePathname } from 'next/navigation';
 
-function ContentPage() {
+const ContentPage = () => {
 	const pathname = usePathname();
 	const segment = pathname.split('/').filter(segment => segment);
 	const [selectedCard, setSelectedCard] = useState('Theory');
@@ -52,6 +52,6 @@ function ContentPage() {
 			</section>
 		</>
 	);
-}
+};
 
 export default ContentPage;

@@ -1,9 +1,5 @@
+const FlashcardsPage = () => {
+	return <div>page</div>;
+};
 
-
-function FlashcardsPage() {
-  return (
-    <div>page</div>
-  )
-}
-
-export default FlashcardsPage
+export default FlashcardsPage;

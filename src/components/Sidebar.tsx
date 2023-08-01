@@ -4,7 +4,8 @@ import { useSession } from 'next-auth/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import ContentLoader from 'react-content-loader';
-import {Navigation} from "@/enums/navigation.enum";
+import { Navigation } from '@/enums/navigation.enum';
+import SearchBar from './SearchBar';
 
 const Sidebar = () => {
 	const { data: session, status } = useSession();
@@ -21,14 +22,7 @@ const Sidebar = () => {
 						</Link>
 					</div>
 				</div>
-				<div className='self-stretch h-auto px-5 py-4 bg-neutral-900 flex-col justify-center items-center gap-2.5 flex'>
-					<div className='p-3 self-stretch bg-zinc-800 border-neutral-400 border-b-2 order-b-bg-neutral-900 gap-4 justify-center items-center flex'>
-						<Image height={48} width={48} alt='' src='/Search.svg' />
-						<div className='w-[318px] h-[18px] justify-start items-start flex'>
-							<div className='grow shrink basis-0 h-[18px] text-neutral-400 text-[14px] font-normal leading-none tracking-wide'>Search</div>
-						</div>
-					</div>
-				</div>
+				<SearchBar />
 				<nav className='self-stretch h-[350px] flex-col justify-center items-start flex'>
 					{navbarIcons.map((icon, index) => (
 						<NavbarIcons key={index} iconSrc={icon.iconSrc} text={icon.text} path={icon.path} />

@@ -1,6 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+
 interface CardProps {
 	title: string;
 	readTime: string;
@@ -11,7 +12,7 @@ const Card = ({ title, readTime }: CardProps) => {
 
 	useEffect(() => {
 		const handleIntersection = (entries: IntersectionObserverEntry[]) => {
-			entries.forEach(entry => setIsActive(!!entry.intersectionRatio));
+			entries.forEach(entry => setIsActive(!!entry.isIntersecting));
 		};
 
 		const observer = new IntersectionObserver(handleIntersection, {
@@ -31,7 +32,7 @@ const Card = ({ title, readTime }: CardProps) => {
 				observer.unobserve(element);
 			}
 		};
-	// eslint-disable-next-line react-hooks/exhaustive-deps
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	return (

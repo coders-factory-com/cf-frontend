@@ -11,7 +11,13 @@ export default withAuth(
 	},
 	{
 		callbacks: {
-			authorized: ({ token }) => !!token,
+			authorized: ({ token, req }) => {
+				if (req.nextUrl.pathname === '/') {
+					return true;
+				} else {
+					return !!token;
+				}
+			},
 		},
 	}
 );
