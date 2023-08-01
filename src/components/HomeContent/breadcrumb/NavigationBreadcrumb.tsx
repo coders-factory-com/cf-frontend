@@ -28,7 +28,7 @@ export default function NavigationBreadcrumb() {
 	};
 
 	return (
-		<div className='w-[calc(100%-200px)] left-[200px] mt-1 relative'>
+		<div>
 			{breadcrumbs.map((breadcrumb, index) => (
 				<Breadcrumb key={index} handleClick={() => handleClick(index)} index={index} text={breadcrumb.text} />
 			))}

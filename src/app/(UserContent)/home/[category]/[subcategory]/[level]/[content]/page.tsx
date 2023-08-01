@@ -31,7 +31,7 @@ const ContentPage = () => {
 
 	return (
 		<>
-			<header className='left-[270px] -z-10 top-[30px] absolute justify-start flex-col items-start gap-2 flex'>
+			<header className='left-[50px] top-[30px] absolute justify-start flex-col items-start gap-2 flex'>
 				<div className=' text-black text-[24px] font-medium'>Functional data processing with streams</div>
 				<div className='justify-start items-start gap-[1px] flex'>
 					<div className='justify-start items-start gap-[1px] flex'>
@@ -41,7 +41,7 @@ const ContentPage = () => {
 					</div>
 				</div>
 			</header>
-			<section className='w-[calc(100%-191px)] left-[191px]  top-[176px] absolute bg-neutral-50'>
+			<section className=' top-[176px] w-full absolute bg-neutral-50'>
 				<div className={`${selectedCard === 'Tasks' ? 'w-full' : 'max-w-[1280px]'}`}>
 					{selectedCard === 'Theory' && <TheoryContainer />}
 					{selectedCard === 'Quizes' && <QuizesContainer />}

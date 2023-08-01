@@ -2,7 +2,7 @@ import SubCategoriesList from '@/components/HomeContent/breadcrumb/SubCaterogies
 
 const page = () => {
 	return (
-		<div className='w-[calc(100%-191px)] left-[191px] relative'>
+		<div>
 			subcategory page
 			<SubCategoriesList />
 		</div>

@@ -2,7 +2,7 @@ import { CategoriesList } from '@/components/HomeContent/breadcrumb/CategoriesLi
 
 const page = () => {
 	return (
-		<div className='w-[calc(100%-191px)] left-[191px] relative'>
+		<div>
 			category primary page
 			<CategoriesList />
 		</div>
