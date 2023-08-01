@@ -4,16 +4,6 @@ import Button from '@/components/common/Button';
 import SuccessMessage from '@/components/common/SuccessMessage';
 import ErrorMessage from '@/components/common/ErrorMessage';
 
-interface Task {
-	id: number;
-	correctAnswerId: number;
-}
-
-interface Quiz {
-	quizId: number;
-	quizTitle: string;
-	tasks: Task[];
-}
 
 interface QuizContainerProps {
 	quizData: Quiz[];
