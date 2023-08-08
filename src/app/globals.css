@@ -32,6 +32,9 @@ button {
 .scrollable::-webkit-scrollbar {
 	width: 12px;
 }
+.polygon:hover polygon {
+	opacity: 60%;
+}
 
 .scrollable::-webkit-scrollbar-thumb {
 	background-color: #0f62fe;

@@ -1,3 +1,10 @@
+import { IoLogoJavascript, IoLogoHtml5 } from 'react-icons/io';
+import { FaJava } from 'react-icons/fa';
+import { DiRuby, DiSwift, DiPhp } from 'react-icons/di';
+import { SiGo } from 'react-icons/si';
+import { CgCPlusPlus } from 'react-icons/cg';
+import { Navigation } from '@/enums/navigation.enum';
+
 export const cards = [
 	{ title: 'Introduction', readTime: '5' },
 	{ title: 'Code', readTime: '10' },
@@ -192,9 +199,26 @@ export const quizAnswers = [
 	{ text: 'New', isChecked: false },
 ];
 
-
 export const files = {
 	name: 'script.js',
 	language: 'javascript',
 	task: 'someJSCodeExample',
 };
+
+export const technologies = [
+	{ IconComponent: IoLogoJavascript, backgroundColor: '#ffde25' },
+	{ IconComponent: CgCPlusPlus, backgroundColor: '#5c8dbc', color: 'white' },
+	{ IconComponent: DiPhp, backgroundColor: '#0d2137', color: 'white' },
+	{ IconComponent: SiGo, backgroundColor: '#0d2137', color: '#00acd7' },
+	{ IconComponent: DiSwift, backgroundColor: '#f5803b ', color: 'white' },
+	{ IconComponent: FaJava },
+	{ IconComponent: IoLogoHtml5, color: 'white', backgroundColor: '#ef652a ' },
+	{ IconComponent: DiRuby, backgroundColor: '#0d2137', color: '#ab1401' },
+];
+
+export const links = [
+    { path: Navigation.Courses, label: 'Course Library' },
+    { path: Navigation.Resources, label: 'Resources' },
+    { path: Navigation.Community, label: 'Community' },
+    { path: Navigation.Challenges, label: 'Challenges' },
+  ];
