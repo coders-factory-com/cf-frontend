@@ -26,6 +26,9 @@ html::-webkit-scrollbar-thumb:hover {
 	background: #3878f0;
 }
 
+button {
+	border: 0;
+}
 .scrollable::-webkit-scrollbar {
 	width: 12px;
 }
