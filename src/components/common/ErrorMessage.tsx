@@ -1,7 +1,7 @@
-import { ReactNode } from 'react';
+import { PropsWithChildren } from 'react';
 import { AiFillCloseCircle } from 'react-icons/ai';
 
-const ErrorMessage = ({ children }: { children: ReactNode }) => {
+const ErrorMessage = ({ children }: PropsWithChildren) => {
 	return (
 		<div className={`self-stretch w-full mt-8 py-4 bg-red-100 border-red-600 border-l-4 border-opacity-30 justify-start items-start gap-4 inline-flex`}>
 			<AiFillCloseCircle className='text-red-600 text-xl ml-4' />

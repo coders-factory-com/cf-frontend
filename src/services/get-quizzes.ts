@@ -198,7 +198,3 @@ export const quizData = [
         ],
     },
 ];
-export const getQuizzes = async () => {
-   // api call
-    return quizData;
-};

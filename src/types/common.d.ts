@@ -8,9 +8,31 @@
 //     message: string;
 // }
 
-type BreadcrumbType = {
-    text: string;
-    href: string;
-};
+interface BreadcrumbType {
+	text: string;
+	href: string;
+}
 
-type ErrorSchema = z.infer<typeof x>
+type ErrorSchema = z.infer<typeof x>;
+
+interface Flashcard {
+	id: number;
+	title: string;
+	answer: string;
+}
+interface Category {
+	id: number;
+	name: string;
+	flashcards: Flashcard[];
+}
+
+interface Task {
+	id: number;
+	correctAnswerId: number;
+}
+
+interface Quiz {
+	quizId: number;
+	quizTitle: string;
+	tasks: Task[];
+}

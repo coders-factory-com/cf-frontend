@@ -1,8 +1,10 @@
 import clsx from 'clsx';
+import React from 'react';
+
 interface ButtonProps {
 	text: string;
 	type?: 'submit' | 'button';
-	onClick?: () => void;
+	onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 	disabled?: boolean;
 	variant: 'primary' | 'secondary';
 	addedClassName?: string;
@@ -15,7 +17,8 @@ const Button = ({ type, text, onClick, disabled, variant = 'primary', addedClass
 	const buttonClasses = clsx(baseClasses, addedClassName, variant === 'primary' ? primaryClasses : secondaryClasses, disabled && 'opacity-60');
 
 	return (
-		<button type={type} disabled={disabled} onClick={onClick} className={buttonClasses}>
+        //  currying  for a more reusable component
+		<button type={type} disabled={disabled} onClick={e => onClick && onClick(e)} className={buttonClasses}>
 			{text}
 		</button>
 	);

@@ -2,7 +2,7 @@ import { LevelsList } from '@/components/HomeContent/breadcrumb/LevelList';
 
 const page = () => {
 	return (
-		<div className='w-[calc(100%-191px)] left-[191px] relative'>
+		<div>
 			level page
 			<LevelsList />
 		</div>

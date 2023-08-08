@@ -1,11 +1,15 @@
 import { useState } from 'react';
 import QuizTask from './QuizTask';
-import { quizData } from '@/services/get-quizzes';
 import Button from '@/components/common/Button';
 import SuccessMessage from '@/components/common/SuccessMessage';
 import ErrorMessage from '@/components/common/ErrorMessage';
 
-const QuizContainer = () => {
+
+interface QuizContainerProps {
+	quizData: Quiz[];
+}
+
+const QuizContainer = ({ quizData }: QuizContainerProps) => {
 	const [answers, setAnswers] = useState<{ [quizId: number]: { [taskId: number]: number } }>({});
 	const [submitted, setSubmitted] = useState<{ [quizId: number]: boolean }>({});
 	const [errors, setErrors] = useState<{ [quizId: number]: { [taskId: number]: string } }>({});

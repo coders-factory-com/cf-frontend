@@ -1,6 +1,8 @@
+import getData from '@/utils/getData';
 import QuizComponent from '../quizContent/QuizContainer';
 
-const QuizesContainer = () => {
+const QuizesContainer = async () => {
+	const quizData = await getData('http://localhost:3000/api/quizes');
 	return (
 		<div className='ml-[10%] flex-col justify-start items-start flex w-full h-full '>
 			<div className=' bg-white border w-full max-w-[1000px] h-full min-h-[1200px] px-6 border-neutral-200 flex-col justify-start items-start gap-6 flex'>
@@ -20,7 +22,7 @@ const QuizesContainer = () => {
 						<ReadOnlyCheckbox key={index} text={quiz.text} isChecked={quiz.isChecked} />
 					))}
 				</section> */}
-				<QuizComponent />
+				<QuizComponent quizData={quizData} />
 			</div>
 		</div>
 	);
