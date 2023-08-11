@@ -1,3 +1,4 @@
+'use client';
 import { notes as initialNotes } from '@/utils/index';
 import Image from 'next/image';
 import { useState } from 'react';

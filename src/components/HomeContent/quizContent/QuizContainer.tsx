@@ -1,9 +1,9 @@
+'use client';
 import { useState } from 'react';
 import QuizTask from './QuizTask';
 import Button from '@/components/common/Button';
 import SuccessMessage from '@/components/common/SuccessMessage';
 import ErrorMessage from '@/components/common/ErrorMessage';
-
 
 interface QuizContainerProps {
 	quizData: Quiz[];

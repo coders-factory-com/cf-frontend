@@ -18,17 +18,8 @@ export const CubeSlider = () => {
 				{MAIN_PAGE_PHOTOS.map((photo, index) => (
 					<SwiperSlide key={index}>
 						<Image alt='slider photo' width={800} height={800} className='object-contain rounded-t-lg' src={photo.image} />
-						<div
-							style={{
-								backgroundImage: `url('noise-bg.png')`,
-								backgroundColor: '#111113',
-							}}
-							className=' relative rounded-b-lg p-4 space-y-4'>
-							<div
-								style={{
-									backgroundImage: `url('noise-bg.png')`,
-								}}
-								className='bg-red-500 rounded-full w-fit py-1 px-2 justify-start items-start flex'>
+						<div className=' relative rounded-b-lg p-4 space-y-4 bg-noise bg-[#111113]'>
+							<div className='bg-red-500 bg-noise rounded-full w-fit py-1 px-2 justify-start items-start flex'>
 								<div className='text-gray-900 text-[12px] font-normal leading-none tracking-wide text-center whitespace-nowrap'> Carrers Insight</div>
 							</div>
 							<h3 className='font-thin text-2xl'>What is Mastery Learning, and How Does It Apply to Coding?</h3>

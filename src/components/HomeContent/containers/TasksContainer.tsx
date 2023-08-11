@@ -1,3 +1,4 @@
+'use client';
 import { useState } from 'react';
 import Editor, { OnValidate } from '@monaco-editor/react';
 import { files } from '@/utils';

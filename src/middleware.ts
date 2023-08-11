@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 
 export default withAuth(
 	function middleware(req: NextRequest) {
-		if (req.cookies.get('next-auth.session-token') && req.nextUrl.pathname === '/') {
+		if (req.cookies.get('next-auth.session-token' || '__Secure-next-auth.session-token') && req.nextUrl.pathname === '/') {
 			const url = req.nextUrl.origin;
 			return NextResponse.redirect(`${url}/home`);
 		}

@@ -4,6 +4,7 @@ import ErrorMessage from '@/components/common/ErrorMessage';
 
 const QuizesContainer = async () => {
 	const quizData = await getData(`${process.env.BASE_URL}/api/quizes`);
+
 	return (
 		<>
 			{quizData ? (

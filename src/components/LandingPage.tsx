@@ -22,7 +22,7 @@ const LandingPage = () => {
 						<p className='text-gray-400 font-medium  text-lg  whitespace-pre-wrap mt-4'>
 							Join our coding community and learn new <br /> skills with over 50 quizes and tasks across dozens <br /> of topics <br />
 						</p>
-						<Link href={Navigation.AuthSignUp} className='text-lg px-8 py-3 font-semibold bg-blue-700 rounded-lg hover:opacity-70 transition-opacity duration-300 ease-in-out'>
+						<Link href={Navigation.AuthSignUp} className='text-lg px-8 py-3 font-semibold rounded-lg transition-all duration-500 bg-gradient-to-l via-cyan-500 from-blue-600 to-green-600 bg-size-200 bg-pos-0 hover:bg-pos-100'>
 							Get Started
 						</Link>
 					</div>
@@ -38,12 +38,7 @@ const LandingPage = () => {
 					</div>
 					<div className='flex justify-center items-center mt-8 md:mt-0'>
 						<i className='hidden md:inline-block cherry absolute -left-[48px] top-1/2'></i>
-						<div
-							style={{
-								backgroundImage: `url('noise-bg.png')`,
-								backgroundColor: 'rgba(9, 16, 35, 1)',
-							}}
-							className='text-lg py-4 w-fit h-fit rounded-lg border-2 border-gray-800 shadow-xl shadow-gray-900 flex flex-col justify-center items-center'>
+						<div className='bg-noise bg-deepSpace text-lg py-4 w-fit h-fit rounded-lg border-2 border-gray-800 shadow-xl shadow-gray-900 flex flex-col justify-center items-center'>
 							<p className='text-gray-400 text-sm px-4'>
 								// since 2023, more than 1,000 Coders <br /> members have gotten job at tech companies //
 							</p>
@@ -82,7 +77,7 @@ const LandingPage = () => {
 						The place for anyone from anywhere <br /> to start coding
 					</h4>
 					<p className='text-lg py-4 text-gray-400 mx-[10%]'>Whether you’re learning how to code, Coders-Factory is your home. Join the world’s faster growing elearning platform to build the innovations that empower humanity. Let’s start from here.</p>
-					<Link href={Navigation.AuthSignUp} className='text-lg px-8 py-3 font-semibold bg-white border border-gray-700 border-opacity-60 text-black rounded-lg hover:opacity-70 transition-opacity duration-300 ease-in-out'>
+					<Link href={Navigation.AuthSignUp} className='text-lg px-8 py-3 font-semibold bg-gray-200 border border-gray-700 hover:bg-white text-gray-700 hover:text-black rounded-lg  transition-all duration-300 ease-in-out'>
 						Sign up for Coders
 					</Link>
 					<div className='w-full flex justify-center mt-12 '>
@@ -90,7 +85,7 @@ const LandingPage = () => {
 					</div>
 				</div>
 			</section>
-		<CubeSlider/>
+			<CubeSlider />
 		</div>
 	);
 };
