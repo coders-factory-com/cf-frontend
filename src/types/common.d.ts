@@ -8,8 +8,6 @@
 //     message: string;
 // }
 
-import { IconType } from 'react-icons/lib';
-
 interface BreadcrumbType {
 	text: string;
 	href: string;
