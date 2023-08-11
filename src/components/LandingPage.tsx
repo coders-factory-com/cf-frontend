@@ -3,17 +3,17 @@
 import Image from 'next/image';
 import { MAIN_PAGE_PHOTOS } from '@/constants/mian-page.constant';
 import { BiLogoAirbnb, BiLogoMicrosoft, BiLogoSpotify } from 'react-icons/bi';
-import HexagonIcon from '../common/HexagonIcon';
-import { technologies } from '@/utils';
 import { Navigation } from '@/enums/navigation.enum';
 import Link from 'next/link';
+import HoneyComb from './HoneyComb';
+import CubeSlider from './CubeSlider';
 
-const HomePage = () => {
+const LandingPage = () => {
 	return (
-		<div className='h-full lg:px-8  lg:pl-32 '>
+		<div className='h-full lg:px-8 max-w-[1560px] mx-auto '>
 			<section className='xl:text-6xl lg:text-5xl text-4xl  pt-28 w-full px-[5%]'>
 				<i className='hidden md:inline-block cherry relative -left-[48px]'></i>
-				<div className='relative flex md:flex-row  flex-col justify-evenly items-center line-main'>
+				<div className='relative flex md:flex-row  flex-col justify-between items-center line-main'>
 					<i className='hidden md:inline-block cherry absolute -left-[48px]  top-1/2'></i>
 					<div className='md:w-1/2 md:mb-0 mb-8'>
 						<p className='text-center md:text-left'>
@@ -30,7 +30,7 @@ const HomePage = () => {
 						<Image alt='code landing page' width={500} height={200} className='object-fill shadow-xl shadow-gray-900' src='/code-landing-page.png' />
 					</div>
 				</div>
-				<div className='relative flex w-full flex-col md:flex-row justify-evenly mt-12 mb-8 md:line-main'>
+				<div className='relative flex w-full flex-col md:flex-row justify-between mt-12 mb-8 md:line-main'>
 					<div className='absolute h-3/4 -left-[50px] border-l-[1px] -top-1/2 border-gray-400'></div>
 					<div className='md:w-1/2 flex flex-col justify-center'>
 						<h3>Join the Success</h3>
@@ -68,13 +68,7 @@ const HomePage = () => {
 					<div className='absolute h-1/2 -left-[50px] border-l-[1px] -top-1/3 border-gray-400'></div>
 					<i className=' hidden md:inline-block cherry absolute -left-[48px] top-1/2'></i>
 					<div className='md:w-1/2 flex sm:justify-center md:mr-12 lg:mr-2'>
-						<div className='grid grid-cols-3 w-fit'>
-							{technologies.map((tech, index) => (
-								<div key={index} className={`flex relative w-fit justify-center items-center ${index <= 2 ? 'top-4 left-12' : index >= 6 ? '-top-4 left-12' : '!top-0 !left-0'}`}>
-									<HexagonIcon color={tech.color} backgroundColor={tech.backgroundColor} IconComponent={tech.IconComponent} />
-								</div>
-							))}
-						</div>
+						<HoneyComb />
 					</div>
 					<div className='md:w-1/2 flex flex-col justify-center'>
 						<h3>Learn</h3>
@@ -91,20 +85,14 @@ const HomePage = () => {
 					<Link href={Navigation.AuthSignUp} className='text-lg px-8 py-3 font-semibold bg-white border border-gray-700 border-opacity-60 text-black rounded-lg hover:opacity-70 transition-opacity duration-300 ease-in-out'>
 						Sign up for Coders
 					</Link>
-					<div className='w-full flex justify-center mt-12'>
-						<Image alt='globe ' width={300} height={300} className='object-contain md:w-1/3 p-1' src='/globe.png' />
+					<div className='w-full flex justify-center mt-12 '>
+						<Image alt='globe ' width={300} height={300} className=' animate-rotateAnimation object-contain md:w-1/3 p-1' src='/globe.png' />
 					</div>
 				</div>
 			</section>
-			<div className='w-full justify-evenly flex'>
-				<div className='flex justify-evenly my-8 flex-wrap  w-[800px]'>
-					{MAIN_PAGE_PHOTOS.map((photo, index) => (
-						<Image alt='' width={400} height={400} key={index} className='object-contain w-1/2 p-1' src={photo.image} />
-					))}
-				</div>
-			</div>
+		<CubeSlider/>
 		</div>
 	);
 };
 
-export default HomePage;
+export default LandingPage;
