@@ -2,7 +2,6 @@
 import { useState } from 'react';
 import HexagonIcon from './common/HexagonIcon';
 import { technologies } from '@/utils';
-import { Tech } from '@/types/common';
 import { AiFillCloseCircle } from 'react-icons/ai';
 
 const HoneyComb = () => {
