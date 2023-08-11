@@ -8,6 +8,8 @@
 //     message: string;
 // }
 
+import { IconType } from 'react-icons/lib';
+
 interface BreadcrumbType {
 	text: string;
 	href: string;
@@ -35,4 +37,11 @@ interface Quiz {
 	quizId: number;
 	quizTitle: string;
 	tasks: Task[];
+}
+
+interface Tech {
+	IconComponent?: IconType;
+	backgroundColor?: string;
+	color?: string;
+	modalContent?: string;
 }

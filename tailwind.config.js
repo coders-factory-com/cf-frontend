@@ -9,6 +9,21 @@ module.exports = {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
 			},
+			keyframes: {
+				rotateAnimation: {
+					'0%': { transform: 'rotate(0)' },
+					'100%': { transform: 'rotate(360deg)' },
+				},
+				scaleAnimation: {
+					'0%': { transform: 'scale(0)' },
+					'50%': { transform: 'scale(1.05)' },
+					'100%': { transform: 'scale(1)' },
+				},
+			},
+			animation: {
+				scaleAnimation: 'scaleAnimation 1s ease-in-out',
+				rotateAnimation: 'rotateAnimation 60s linear infinite',
+			},
 		},
 	},
 	plugins: [],

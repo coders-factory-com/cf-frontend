@@ -1,6 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import GlobalProvider from './GlobalProvider';
+import NextTopLoader from 'nextjs-toploader';
 import { PropsWithChildren } from 'react';
 
 export const metadata: Metadata = {
@@ -12,7 +13,10 @@ export default function RootLayout({ children }: PropsWithChildren) {
 	return (
 		<html lang='en'>
 			<body>
-				<GlobalProvider>{children}</GlobalProvider>
+				<GlobalProvider>
+					<NextTopLoader showSpinner={false} />
+					{children}
+				</GlobalProvider>
 			</body>
 		</html>
 	);

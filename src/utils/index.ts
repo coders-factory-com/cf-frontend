@@ -1,3 +1,10 @@
+import { IoLogoJavascript, IoLogoHtml5 } from 'react-icons/io';
+import { FaJava } from 'react-icons/fa';
+import { DiRuby, DiSwift, DiPhp } from 'react-icons/di';
+import { SiGo } from 'react-icons/si';
+import { CgCPlusPlus } from 'react-icons/cg';
+import { Navigation } from '@/enums/navigation.enum';
+
 export const cards = [
 	{ title: 'Introduction', readTime: '5' },
 	{ title: 'Code', readTime: '10' },
@@ -192,9 +199,63 @@ export const quizAnswers = [
 	{ text: 'New', isChecked: false },
 ];
 
-
 export const files = {
 	name: 'script.js',
 	language: 'javascript',
 	task: 'someJSCodeExample',
 };
+
+export const technologies = [
+	{
+		IconComponent: IoLogoJavascript,
+		backgroundColor: '#ffde25',
+		modalContent: 'JavaScript is a programming language that enables interactive web pages. It is a part of most web browsers and allows client-side script to interact with the user.',
+	},
+	{
+		IconComponent: CgCPlusPlus,
+		backgroundColor: '#5c8dbc',
+		color: 'white',
+		modalContent: 'C++ is a general-purpose programming language created as an extension of the C programming language. It has imperative, object-oriented and generic programming features.',
+	},
+	{
+		IconComponent: DiPhp,
+		backgroundColor: '#0d2137',
+		color: 'white',
+		modalContent: 'PHP is a popular server-side scripting language that is used to create dynamic and interactive websites. It is often used in combination with a MySQL database.',
+	},
+	{
+		IconComponent: SiGo,
+		backgroundColor: '#0d2137',
+		color: '#00acd7',
+		modalContent: 'Go, also known as Golang, is a statically typed, compiled language designed at Google. It is known for its performance and efficiency, and is used for web programming and system applications.',
+	},
+	{
+		IconComponent: DiSwift,
+		backgroundColor: '#f5803b',
+		color: 'white',
+		modalContent: 'Swift is a powerful programming language for iOS, macOS, watchOS, and tvOS. It combines performance and development efficiency, and is used for building apps on Apple platforms.',
+	},
+	{
+		IconComponent: FaJava,
+		modalContent: 'Java is a class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible. It is commonly used for mobile applications, web applications, and systems development.',
+	},
+	{
+		IconComponent: IoLogoHtml5,
+		color: 'white',
+		backgroundColor: '#ef652a',
+		modalContent: 'HTML5 is the latest version of HTML, the standard markup language for creating web pages. It provides new features, behaviors, and elements that enable more dynamic, interactive web content.',
+	},
+	{
+		IconComponent: DiRuby,
+		backgroundColor: '#0d2137',
+		color: '#ab1401',
+		modalContent: 'Ruby is a dynamic, open-source programming language that emphasizes simplicity and productivity. It has an elegant syntax that is easy to read and write, and is used for web development, among other tasks.',
+	},
+];
+
+export const links = [
+	{ path: Navigation.Courses, label: 'Course Library' },
+	{ path: Navigation.Resources, label: 'Resources' },
+	{ path: Navigation.Community, label: 'Community' },
+	{ path: Navigation.Challenges, label: 'Challenges' },
+];
