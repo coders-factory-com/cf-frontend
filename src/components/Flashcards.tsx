@@ -1,6 +1,7 @@
 'use client';
 import Button from '@/components/common/Button';
 import { useFlashcards } from '@/customHooks/useFlashcards';
+import ErrorMessage from './common/ErrorMessage';
 
 interface FlashcardsProps {
 	flashcards: Category[];
@@ -10,15 +11,17 @@ const Flashcards = ({ flashcards }: FlashcardsProps) => {
 	const { currentFlashcard, currentFlashcardCategory, showAnswer, handleClick, handleClose, handleShowAnswer, nextFlashcard } = useFlashcards();
 	return (
 		<div>
-			{!currentFlashcardCategory &&
-				flashcards.map(category => (
-					<div key={category.id}>
-						<h2 className='flex p-4 cursor-pointer shadow-lg shadow-black w-48  justify-center items-center' onClick={() => handleClick(category)}>
-							{category.name}
-						</h2>
-					</div>
-				))}
-
+			<div>
+				{!currentFlashcardCategory && !flashcards?.length && <ErrorMessage>Ups we have problem with fetch flashcards!</ErrorMessage>}
+				{!currentFlashcardCategory &&
+					flashcards?.map(category => (
+						<div key={category.id}>
+							<h2 className='flex p-4 cursor-pointer shadow-lg shadow-black w-48  justify-center items-center' onClick={() => handleClick(category)}>
+								{category.name}
+							</h2>
+						</div>
+					))}
+			</div>
 			{currentFlashcard && (
 				<div onClick={handleClose} className='fixed z-10 inset-0 overflow-y-auto flex items-center justify-center'>
 					<div className='fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity'></div>
