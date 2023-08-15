@@ -1,7 +1,7 @@
 import FormHeader from '@/components/FormHeader';
 import { PropsWithChildren } from 'react';
 import NextTopLoader from 'nextjs-toploader';
-export default function RootLayout({ children }: PropsWithChildren) {
+export default function layout({ children }: PropsWithChildren) {
 	return (
 		<>
 			<NextTopLoader showSpinner={false} />

@@ -8,6 +8,11 @@
 //     message: string;
 // }
 
+declare module 'openai-edge' {
+	export const Configuration: any;
+	export const OpenAIApi: any;
+}
+
 interface BreadcrumbType {
 	text: string;
 	href: string;
