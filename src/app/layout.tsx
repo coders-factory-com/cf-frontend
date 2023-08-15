@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import GlobalProvider from './GlobalProvider';
 import NextTopLoader from 'nextjs-toploader';
 import { PropsWithChildren } from 'react';
+import { Chat } from '@/components/chatbot/Chat';
 
 export const metadata: Metadata = {
 	title: 'Coders-Factory',
@@ -15,6 +16,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
 			<body>
 				<GlobalProvider>
 					<NextTopLoader showSpinner={false} />
+                    <Chat />
 					{children}
 				</GlobalProvider>
 			</body>

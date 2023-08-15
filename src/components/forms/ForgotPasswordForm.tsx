@@ -35,7 +35,7 @@ const ForgotPasswordForm = () => {
 			<form className='relative z-[3] mt-4 py-6 space-y-8' onSubmit={handleSubmit}>
 				<Input placeholder='E-mail' value={email} onChange={e => setEmail(e.target.value)} />
 				{errors?.email && <ErrorMessage>{errors.email}</ErrorMessage>}
-				<Button text='	Send reset link' variant='secondary' addedClassName='w-full' />
+				<Button text='Send reset link' variant='secondary' addedClassName='w-full' />
 			</form>
 			<p className='my-4 text-center inline-block w-full'>
 				Back to
