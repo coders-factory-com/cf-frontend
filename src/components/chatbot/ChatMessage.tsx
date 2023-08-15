@@ -28,7 +28,7 @@ export function ChatMessage({ message, ...props }: ChatMessageProps) {
 	return (
 		<div className={clsx(' mb-4 flex w-full items-start justify-center')} {...props}>
 			<div className={clsx('flex h-8 w-8 shrink-0 select-none items-center justify-center rounded-md border shadow', message.role === 'user' ? 'bg-black' : 'bg-white ')}>{message.role === 'user' ? session?.user?.image ? <Image src={session.user.image} width={100} height={100} alt={session.user.name || 'user photo'} /> : <FaUserAlt className='text-white' /> : <SiOpenai />}</div>
-			<div className='flex-1 px-1 ml-4 space-y-2 '>
+			<div className='flex-1 px-1 md:ml-4 ml-1 space-y-2 '>
 				<MemoizedReactMarkdown
 					className=' whitespace-pre-wrap w-full'
 					remarkPlugins={[remarkGfm, remarkMath]}

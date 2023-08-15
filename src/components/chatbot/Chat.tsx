@@ -6,10 +6,11 @@ import { EmptyScreen } from './EmptyScreen';
 import { ChatList } from './ChatList';
 import { ChatPanel } from './ChatPanel';
 import { VscHubot } from 'react-icons/vsc';
-import { AiOutlineCloseCircle } from 'react-icons/ai';
-import { BsArrowsFullscreen } from 'react-icons/bs';
+import { AiFillCloseCircle } from 'react-icons/ai';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { selectIsFullScreen, toggleFullScreen } from '@/redux/screenSlice';
+import { BiFullscreen } from 'react-icons/bi';
 
 export interface ChatProps extends ComponentProps<'div'> {
 	initialMessages?: Message[];
@@ -32,12 +33,12 @@ export function Chat({ id, initialMessages }: ChatProps) {
 	});
 	return (
 		<>
-			<div className={` ${isOpen ? 'translate-x-0' : 'translate-x-[120%]'} transition-all duration-1000  ease-cubic   z-50 bg-white rounded-lg fixed right-4 bottom-8 h-fit py-4 border-[1px] shadow-lg ${isFullScreen ? 'w-full h-full' : 'w-[440px]'} `}>
-				<AiOutlineCloseCircle className='cursor-pointer absolute top-4 right-4 hover:bg-red-500 rounded-full text-2xl z-10' onClick={() => setIsOpen(prev => !prev)} />
-				<BsArrowsFullscreen className='cursor-pointer absolute top-4 left-4 rounded-full text-2xl z-10' onClick={() => dispatch(toggleFullScreen())} />
-				<div className={'pb-14 pt-8  '}>
+			<div className={` ${isOpen ? 'translate-x-0' : 'translate-x-[120%]'} transition-all duration-1000  ease-cubic  z-50 bg-white rounded-lg fixed py-4 border-[1px] shadow-lg ${isFullScreen ? 'w-full h-full right-0 bottom-0' : 'md:w-[440px] w-full h-auto md:right-4 md:bottom-8 bottom-0'} `}>
+				<AiFillCloseCircle className='cursor-pointer absolute top-4 right-4 hover:fill-red-500 rounded-full text-2xl z-10' onClick={() => setIsOpen(prev => !prev)} />
+				<BiFullscreen className='cursor-pointer absolute top-4 left-4 md:block hidden text-black rounded-full text-2xl z-10' onClick={() => dispatch(toggleFullScreen())} />
+				<div className={`mb-14 mt-8  ${!messages.length ? '' : 'border-t-2 border-b-2'}`}>
 					{messages.length ? (
-						<div className='max-w-[400px]'>
+						<div className={` mx-auto ${isFullScreen ? 'w-3/4 ' : 'md:max-w-[400px] max-w-none '}  mx-auto`}>
 							<ChatList messages={messages} />
 						</div>
 					) : (
@@ -46,7 +47,7 @@ export function Chat({ id, initialMessages }: ChatProps) {
 				</div>
 				<ChatPanel isLoading={isLoading} stop={stop} append={append} reload={reload} messages={messages} input={input} setInput={setInput} />
 			</div>
-			<VscHubot onClick={() => setIsOpen(prev => !prev)} className={` ${isOpen ? 'opacity-0 pointer-events-none delay-0' : 'opacity-100 delay-1000'} cursor-pointer transition-all duration-300 ease-in-out border-2 shadow-lg  z-50 fixed right-8 bottom-8 text-5xl bg-white rounded-full p-2`} />
+			<VscHubot onClick={() => setIsOpen(prev => !prev)} className={` ${isOpen ? 'opacity-0 pointer-events-none delay-0' : 'opacity-100 delay-1000'} cursor-pointer transition-all duration-300 ease-in-out border-2 shadow-lg  z-50 fixed right-2 md:right-8 md:bottom-8 bottom-2 text-4xl md:text-5xl bg-white rounded-full p-1 md:p-2`} />
 			{/* <div>
 				<div>
 					<div>

@@ -33,21 +33,24 @@ export function PromptForm({ onSubmit, input, setInput, isLoading }: PromptProps
 				await onSubmit(input);
 			}}
 			ref={formRef}>
-			<div className='relative flex max-h-60 w-full flex-col overflow-hidden bg-background px-8 sm:rounded-md sm:border sm:px-12'>
-				<button
-					onClick={e => {
-						e.preventDefault();
-						router.refresh();
-					}}
-					className='absolute left-0 top-4 h-8 w-8 rounded-full bg-background p-0 sm:left-4'>
-					<span className='sr-only text-black'>New Chat</span>
-				</button>
-				<Textarea ref={inputRef} tabIndex={0} onKeyDown={onKeyDown} rows={1} value={input} onChange={e => setInput(e.target.value)} placeholder='Send a message.' spellCheck={false} className='min-h-[60px] scrollable w-full resize-none bg-transparent px-4 py-[1.3rem] focus-within:outline-none sm:text-sm' />
-				<div className='absolute right-0  top-4 sm:right-4'>
-					<AiOutlineEnter className=' border-2 text-3xl text-black font-bold' />
-					<button type='submit' disabled={isLoading || input === ''} className='h-8 w-8 rounded-full bg-background p-0'>
-						<span className='sr-only'>Send message</span>
+			<div className='mx-4 md:mx-0'>
+				<div className=' relative flex max-h-60 w-full rounded-lg flex-col overflow-hidden bg-background px-4 sm:rounded-md border sm:px-12'>
+					<button
+						onClick={e => {
+							e.preventDefault();
+							router.refresh();
+						}}
+						className='absolute left-0 top-4 h-8 w-8 rounded-full bg-background p-0 sm:left-4'>
+						<span className='sr-only text-black'>New Chat</span>
 					</button>
+
+					<Textarea ref={inputRef} tabIndex={0} onKeyDown={onKeyDown} rows={1} value={input} onChange={e => setInput(e.target.value)} placeholder='Send a message.' spellCheck={false} className='min-h-[60px] max-h-[120px] md:max-h-none  scrollable w-full resize-none bg-transparent px-4 py-[1.3rem] focus-within:outline-none sm:text-sm' />
+					<div className='absolute right-0  top-4 sm:right-4'>
+						<AiOutlineEnter className=' border-2 text-3xl text-black font-bold' />
+						<button type='submit' disabled={isLoading || input === ''} className='h-8 w-8 rounded-full bg-background p-0'>
+							<span className='sr-only'>Send message</span>
+						</button>
+					</div>
 				</div>
 			</div>
 		</form>

@@ -7,6 +7,8 @@ import { AiOutlineCheckCircle } from 'react-icons/ai';
 import { BiCopyAlt, BiSolidDownload } from 'react-icons/bi';
 import Button from '../common/Button';
 import { useCopyToClipboard } from '@/customHooks/useCopyToClipboard';
+import { selectIsFullScreen } from '@/redux/screenSlice';
+import { useSelector } from 'react-redux';
 
 interface Props {
 	language: string;
@@ -55,6 +57,7 @@ export const generateRandomString = (length: number, lowercase = false) => {
 
 const CodeBlock: FC<Props> = memo(({ language, value }) => {
 	const { isCopied, copyToClipboard } = useCopyToClipboard({ timeout: 2000 });
+	const isFullScreen = useSelector(selectIsFullScreen);
 
 	const downloadAsFile = () => {
 		if (typeof window === 'undefined') {
@@ -87,7 +90,7 @@ const CodeBlock: FC<Props> = memo(({ language, value }) => {
 	};
 
 	return (
-		<div className='relative font-sans  bg-zinc-950 max-w-[320px] w-full '>
+		<div className={`relative font-sans mx-auto bg-zinc-950 ${isFullScreen ? '' : 'max-w-[300px] '}   `}>
 			<div className='flex items-center justify-between w-full px-6 py-2 pr-4 bg-zinc-800 text-zinc-100'>
 				<span className='text-xs lowercase'>{language}</span>
 				<div className='flex items-center space-x-1'>
