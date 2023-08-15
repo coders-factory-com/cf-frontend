@@ -1,8 +1,8 @@
 import clsx from 'clsx';
-import React from 'react';
+import { ReactNode } from 'react';
 
 interface ButtonProps {
-	text: string;
+	text: ReactNode;
 	type?: 'submit' | 'button';
 	onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 	disabled?: boolean;

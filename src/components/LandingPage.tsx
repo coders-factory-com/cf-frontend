@@ -1,7 +1,6 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 
 import Image from 'next/image';
-import { MAIN_PAGE_PHOTOS } from '@/constants/mian-page.constant';
 import { BiLogoAirbnb, BiLogoMicrosoft, BiLogoSpotify } from 'react-icons/bi';
 import { Navigation } from '@/enums/navigation.enum';
 import Link from 'next/link';
@@ -42,7 +41,7 @@ const LandingPage = () => {
 							<p className='text-gray-400 text-sm px-4'>
 								// since 2023, more than 1,000 Coders <br /> members have gotten job at tech companies //
 							</p>
-							<hr className='w-full my-4 border-t-gray-800 border-t-2' />
+							<hr className='w-full my-4 border-gray-800 border-2' />
 							<div className='md:text-lg text-base flex space-x-4 justify-between w-full px-2 md:px-4 '>
 								<div className='flex items-center justify-center'>
 									<BiLogoMicrosoft className='mr-1' />
