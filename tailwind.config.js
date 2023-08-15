@@ -11,6 +11,18 @@ module.exports = {
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+				noise: "url('/noise-bg.png')",
+				noiseGradient: "url('/noise-bg.png'), linear-gradient(225deg, rgba(19, 53, 52, 1) 15%, rgba(9, 16, 35, 1) 40%)",
+			},
+			backgroundColor: {
+				deepSpace: 'rgba(9, 16, 35, 1)',
+			},
+			backgroundSize: {
+				'size-200': '200% 200%',
+			},
+			backgroundPosition: {
+				'pos-0': '0% 0%',
+				'pos-100': '100% 100%',
 			},
 			keyframes: {
 				rotateAnimation: {
