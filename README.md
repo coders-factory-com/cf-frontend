@@ -1,4 +1,14 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Here is demo vide what we can find on this app! please remember this app is still under development and some pages are just empty
+
+
+
+
+https://github.com/coders-factory-com/cf-frontend/assets/108432936/0cb5c35d-74dc-4a19-9917-46c56e48f212
+
+
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).11
 
 ## Getting Started
 
