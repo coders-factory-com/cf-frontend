@@ -1,3 +1,4 @@
+import Footer from '@/components/Footer';
 import LandingPageNavigation from '@/components/LandingPageNavigation';
 import { PropsWithChildren } from 'react';
 
@@ -10,6 +11,7 @@ export default function UserContentLayout({ children }: PropsWithChildren) {
 			className='z-0 max-w-[100vw] min-h-screen h-full  text-white'>
 			<LandingPageNavigation />
 			{children}
+			<Footer />
 		</main>
 	);
 }
