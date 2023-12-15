@@ -2,12 +2,12 @@ import Link from 'next/link';
 import { Navigation } from '@/enums/navigation.enum';
 import { SOCIAL_PROVIDER_REACT_ICONS } from '@/constants/social-provider-react-icons';
 
-type FooterSectionType = {
+interface FooterSectionInterface  {
 	section: string;
 	links: { label: string; href: string }[];
 };
 
-const FooterSection = ({ section, links }: FooterSectionType) => (
+const FooterSection = ({ section, links }: FooterSectionInterface) => (
 	<div className="flex flex-col space-y-3">
 		<h1 className="text-xl font-bold opacity-50 text-white">{section}</h1>
 		<ul className="flex flex-col space-y-2 font-semibold text-white">
@@ -41,7 +41,7 @@ const SocialIcons = () => (
 );
 
 function Footer() {
-	const FOOTER_NAVIGATION: FooterSectionType[] = [
+	const FOOTER_NAVIGATION: FooterSectionInterface[] = [
 		{
 			section: 'Company',
 			links: [
@@ -53,7 +53,7 @@ function Footer() {
 			],
 		},
 		{
-			section: 'Company',
+			section: 'About',
 			links: [
 				{ label: 'Blog', href: '#' },
 				{ label: 'About Us', href: '#' },
@@ -63,7 +63,7 @@ function Footer() {
 			],
 		},
 		{
-			section: 'Company',
+			section: 'Contact',
 			links: [
 				{ label: 'Blog', href: '#' },
 				{ label: 'About Us', href: '#' },
@@ -98,9 +98,9 @@ function Footer() {
 					</div>
 				</div>
 
-				{FOOTER_NAVIGATION.map((section, index) => (
+				{FOOTER_NAVIGATION.map((section) => (
 					<FooterSection
-						key={index}
+						key={section.section}
 						section={section.section}
 						links={section.links}
 					/>
