@@ -1,6 +1,5 @@
 import { SocialsLinks } from "@/enums/socials.enum";
-import { BiLogoLinkedinSquare } from "react-icons/bi";
-import { FaFacebook, FaFacebookSquare, FaGithub, FaGithubSquare, FaGoogle, FaGooglePlusSquare, FaLinkedin } from "react-icons/fa";
+import { FaFacebookSquare, FaGithubSquare, FaGooglePlusSquare, FaLinkedin } from "react-icons/fa";
 
 export const SOCIAL_PROVIDER_REACT_ICONS = [
 	{
