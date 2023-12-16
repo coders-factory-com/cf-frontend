@@ -76,9 +76,9 @@ function Footer() {
 
 	return (
 		<div className="w-full flex justify-center py-12">
-			<footer className="max-w-[1920px] flex justify-between w-full px-12 md:px-24 flex-wrap">
+			<footer className="max-w-[1920px] flex justify-between w-full px-12 md:px-24 flex-wrap gap-10">
 				<div className="w-full pb-6 md:w-auto flex flex-col items-start">
-					<div className='space-y-4 flex md:flex-col w-full justify-between items-start'>
+					<div className='space-y-4 flex flex-col sm:flex-row md:flex-col w-full justify-between items-start'>
 						<div>
 							<Link
 								className="flex items-center justify-center font-bold text-2xl"
