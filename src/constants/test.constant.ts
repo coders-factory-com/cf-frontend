@@ -1,1 +1,1 @@
-const TEST_CONSTANT = 'example';
+// const TEST_CONSTANT = 'example';

@@ -3,7 +3,7 @@ import HomePage from '@/components/LandingPage';
 import React from 'react';
 
 const page = () => {
-	return <HomePage />;
+  return <HomePage />;
 };
 
 export default page;

@@ -5,11 +5,11 @@ import { PropsWithChildren } from 'react';
 import { Provider } from 'react-redux';
 
 const GlobalProvider = ({ children }: PropsWithChildren) => {
-	return (
-		<SessionProvider>
-			<Provider store={store}>{children}</Provider>
-		</SessionProvider>
-	);
+  return (
+    <SessionProvider>
+      <Provider store={store}>{children}</Provider>
+    </SessionProvider>
+  );
 };
 
 export default GlobalProvider;

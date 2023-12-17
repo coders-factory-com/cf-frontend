@@ -13,42 +13,67 @@ import { selectIsFullScreen, toggleFullScreen } from '@/redux/screenSlice';
 import { BiFullscreen } from 'react-icons/bi';
 
 export interface ChatProps extends ComponentProps<'div'> {
-	initialMessages?: Message[];
-	id?: string;
+  initialMessages?: Message[];
+  id?: string;
 }
 
-export function Chat({ id, initialMessages }: ChatProps) {
-	const [isOpen, setIsOpen] = useState(false);
-	const dispatch = useDispatch();
-	const isFullScreen = useSelector(selectIsFullScreen);
+export function Chat({ initialMessages }: ChatProps) {
+  const [isOpen, setIsOpen] = useState(false);
+  const dispatch = useDispatch();
+  const isFullScreen = useSelector(selectIsFullScreen);
 
-	const { messages, append, reload, stop, isLoading, input, setInput } = useChat({
-		initialMessages,
+  const { messages, append, reload, stop, isLoading, input, setInput } = useChat({
+    initialMessages,
 
-		onResponse(response) {
-			if (response.status === 401) {
-				toast.error(response.statusText);
-			}
-		},
-	});
-	return (
-		<>
-			<div className={` ${isOpen ? 'translate-x-0' : 'translate-x-[120%]'} transition-all duration-1000  ease-cubic  z-50 bg-white rounded-lg fixed py-4 border-[1px] shadow-lg ${isFullScreen ? 'w-full h-full right-0 bottom-0' : 'md:w-[440px] w-full h-auto md:right-4 md:bottom-8 bottom-0'} `}>
-				<AiFillCloseCircle className='cursor-pointer absolute top-4 right-4 hover:fill-red-500 rounded-full text-2xl z-10' onClick={() => setIsOpen(prev => !prev)} />
-				<BiFullscreen className='cursor-pointer absolute top-4 left-4 md:block hidden text-black rounded-full text-2xl z-10' onClick={() => dispatch(toggleFullScreen())} />
-				<div className={`mb-14 mt-8  ${!messages.length ? '' : 'border-t-2 border-b-2'}`}>
-					{messages.length ? (
-						<div className={` mx-auto ${isFullScreen ? 'w-3/4 ' : 'md:max-w-[400px] max-w-none '}  mx-auto`}>
-							<ChatList messages={messages} />
-						</div>
-					) : (
-						<EmptyScreen setInput={setInput} />
-					)}
-				</div>
-				<ChatPanel isLoading={isLoading} stop={stop} append={append} reload={reload} messages={messages} input={input} setInput={setInput} />
-			</div>
-			<VscHubot onClick={() => setIsOpen(prev => !prev)} className={` ${isOpen ? 'opacity-0 pointer-events-none delay-0' : 'opacity-100 delay-1000'} cursor-pointer transition-all duration-300 ease-in-out border-2 shadow-lg  z-50 fixed right-2 md:right-8 md:bottom-8 bottom-2 text-4xl md:text-5xl bg-white rounded-full p-1 md:p-2`} />
-			{/* <div>
+    onResponse(response) {
+      if (response.status === 401) {
+        toast.error(response.statusText);
+      }
+    },
+  });
+  return (
+    <>
+      <div
+        className={` ${
+          isOpen ? 'translate-x-0' : 'translate-x-[120%]'
+        } fixed z-50  rounded-lg  border-[1px] bg-white py-4 shadow-lg transition-all duration-1000 ease-cubic ${
+          isFullScreen ? 'bottom-0 right-0 h-full w-full' : 'bottom-0 h-auto w-full md:bottom-8 md:right-4 md:w-[440px]'
+        } `}
+      >
+        <AiFillCloseCircle
+          className='absolute right-4 top-4 z-10 cursor-pointer rounded-full text-2xl hover:fill-red-500'
+          onClick={() => setIsOpen((prev) => !prev)}
+        />
+        <BiFullscreen
+          className='absolute left-4 top-4 z-10 hidden cursor-pointer rounded-full text-2xl text-black md:block'
+          onClick={() => dispatch(toggleFullScreen())}
+        />
+        <div className={`mb-14 mt-8  ${!messages.length ? '' : 'border-b-2 border-t-2'}`}>
+          {messages.length ? (
+            <div className={` mx-auto ${isFullScreen ? 'w-3/4 ' : 'max-w-none md:max-w-[400px] '}  mx-auto`}>
+              <ChatList messages={messages} />
+            </div>
+          ) : (
+            <EmptyScreen setInput={setInput} />
+          )}
+        </div>
+        <ChatPanel
+          isLoading={isLoading}
+          stop={stop}
+          append={append}
+          reload={reload}
+          messages={messages}
+          input={input}
+          setInput={setInput}
+        />
+      </div>
+      <VscHubot
+        onClick={() => setIsOpen((prev) => !prev)}
+        className={` ${
+          isOpen ? 'pointer-events-none opacity-0 delay-0' : 'opacity-100 delay-1000'
+        } fixed bottom-2 right-2 z-50 cursor-pointer rounded-full  border-2 bg-white p-1 text-4xl shadow-lg transition-all duration-300 ease-in-out md:bottom-8 md:right-8 md:p-2 md:text-5xl`}
+      />
+      {/* <div>
 				<div>
 					<div>
 						<div>Enter your OpenAI Key</div>
@@ -71,6 +96,6 @@ export function Chat({ id, initialMessages }: ChatProps) {
 					</footer>
 				</div>
 			</div> */}
-		</>
-	);
+    </>
+  );
 }

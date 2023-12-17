@@ -8,23 +8,23 @@ export const runtime = 'edge';
 export const preferredRegion = 'home';
 
 export async function generateMetadata(): Promise<Metadata> {
-	const session = await getSession();
+  const session = await getSession();
 
-	if (!session?.user) {
-		return {};
-	}
+  if (!session?.user) {
+    return {};
+  }
 
-	return {
-		title: 'Chat',
-	};
+  return {
+    title: 'Chat',
+  };
 }
 
 export default async function ChatPage() {
-	const session = await getSession();
+  const session = await getSession();
 
-	if (!session?.user) {
-		redirect(`/`);
-	}
+  if (!session?.user) {
+    redirect(`/`);
+  }
 
-	return <Chat />;
+  return <Chat />;
 }
