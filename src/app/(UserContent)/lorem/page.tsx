@@ -1,5 +1,5 @@
 const LoremPage = () => {
-	return <div>waiting for content</div>;
+  return <div>waiting for content</div>;
 };
 
 export default LoremPage;

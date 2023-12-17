@@ -1,5 +1,5 @@
 const OtherContainer = () => {
-	return <div>OtherContent</div>;
+  return <div>OtherContent</div>;
 };
 
 export default OtherContainer;
